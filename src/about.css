@@ -1,0 +1,172 @@
+.aboutSect{
+    min-height: 90vh;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-bottom: 1rem;
+}
+.about_img{
+    width:30rem;
+    margin:3em;
+}
+.fockerSect{
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+.fockerSect p{
+    color: #5e5e5e;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.fockers{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-block: 2.5rem;
+}
+.focker_1, .focker_2{
+    min-width:40%;
+    margin-block: 1rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px darkgrey;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-inline-start: 5px solid #49af54;
+    transition: all .3s;
+}
+.focker_1:hover, .focker_2:hover{
+    transform: translateY(-2%);
+    box-shadow: 4px 4px 12px rgb(169 169 169 / 77%);
+}
+.inner{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.abouthalf{
+    min-width: 10rem;
+    max-width: 35rem;
+    margin-block: 2em;
+    margin: 3em;
+}
+.fockerimg{
+    width: 10rem;
+    height:9.5rem;
+    border-radius: 50%;
+}
+.h3a{
+    font-size: 1.3rem;
+    color: #49af54;
+    border-left: 3px solid #49af54;
+    font-weight: 500;
+    text-align: end;
+    text-transform: uppercase;
+}
+.spry_h1{
+    color: rgb(73, 175, 84);
+    font-size: 5rem;
+    font-weight: 700;
+}
+.tc{
+    text-align: center;
+}
+.tc li{
+    list-style: none;
+}
+.ts{
+    text-align: start;
+}
+.te{
+    text-align:end;
+}
+.mg2{
+    width:10rem;
+    margin:1rem;
+}
+.vrn{
+ display: initial;
+}
+
+
+
+.image-box{
+    height: 9.5rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    background-size: 110%;
+    background-position: center;
+    transition: all .3s;
+}
+.image-box:hover{
+    background-size: 115%;
+}
+.focker-1{
+    background-image: linear-gradient(40deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(./assets/focker_1.jpg);
+}
+.focker-1:hover{
+    background-image: linear-gradient(40deg, rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url(./assets/focker_1.jpg);
+}
+.focker-2{
+    background-image: linear-gradient(40deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(./assets/focker_1.jpg);
+}
+.focker-2:hover{
+    background-image: linear-gradient(40deg, rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url(./assets/focker_1.jpg);
+}
+
+.icon{
+    height: fit-content;
+    width: -webkit-fill-available;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+    opacity: 0;
+    transition: all .3s;
+}
+.icon-container:hover{
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+}
+.icon-container:hover a{
+    color: rgba(255, 255, 255, 0.8);
+}
+.image-box:hover .icon{
+    opacity: 1;
+}
+.icon-container a{
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.icon-container{
+    border-radius: 9px;
+    padding-inline: 0.3rem;
+    padding-block: 0.3rem;
+    margin: 0.2rem;
+    border: 1.5px solid transparent;
+    transition: all .3s;
+}
+#med-icon{
+    height: 2.2em;
+    width:2.2em;
+}
+#big-icon{
+    height: 6em;
+    width:6em;
+}

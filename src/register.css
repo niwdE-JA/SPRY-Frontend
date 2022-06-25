@@ -1,0 +1,61 @@
+.hr{
+    margin: auto;
+    height: 0.35rem;
+    width: 2.5rem;
+    border-radius: 50px;
+    background-color: #49af54;
+    border: 0;
+    margin-block: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.bod{
+    width:80%;
+    min-height: 80vh;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.register{
+    width:100%;
+    margin:auto;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+}
+.login{
+    width:80%;
+    flex-wrap: wrap;
+}
+.h1{
+    font-size: 5rem;
+    font-weight: 400;
+    color: #5a5a5a;
+}
+.h3r{
+    font-size: 2rem;
+    color: #49af54;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.halfsect{
+    min-width: 10rem;
+    max-width: 35rem;
+    margin-block: 2em;
+    margin: auto;
+}
+
+.regTxt{
+    width: 90%;
+    margin: auto;
+    margin-block: 1rem;
+    color: #5e5e5e;
+    font-weight: 500;
+}
+.regTxt p{
+    font-size: 1.2rem;
+    text-align: left;
+}
+

@@ -1,0 +1,85 @@
+.conten {
+    display: flex;
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fill-available;
+    border-top: 0px;
+}
+.cnt{
+    width: 90%;
+    display: flex;
+}
+.txtbox{
+    max-height: fit-content;
+    width: fill-available;
+    margin-right: 0.5rem;
+    margin-left: auto;
+}
+
+
+.inp{
+    width: 100%;
+    font-size: 1.3rem;
+    resize: none;
+    font-weight: 400;
+    text-align: start;
+    outline: 0px;
+    color: rgb(89, 89, 89);
+    background-color: rgba(0, 0, 0, 0);
+    border: 2.2px solid rgb(73 175 118);
+    border-radius: 600px;
+    padding-inline-start: 1rem;
+    padding-block: 0.7rem;
+    height: 3.5rem;
+    white-space: normal;
+}
+.inp::-webkit-scrollbar{
+    width: 8px;
+    border: 1px solid #d4d4d4;
+    background: #d5d5d5;
+  }
+.inp::-webkit-scrollbar-thumb {
+    background-color: #49af54;
+    border-radius: 100px;
+    padding-inline: 5px;
+  }
+.shSnt{
+    display: flex;
+    justify-content: space-between;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-block: 0.5rem 0.7rem;
+}
+.sh, .sh:active {
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: var(--prmryColor-sub);
+    color: white;
+    padding-inline: 2rem;
+    padding-block: 0.55rem;
+    border-radius: 5px;
+    transition: all .3s;
+}
+.sh:hover, .snd:hover {
+    background-color: rgb(15, 104, 55);
+}
+.snd{
+    font-size: 1.1rem;
+    height: fill-available;
+    font-weight: 500;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--prmryColor-sub);
+    color: white;
+    padding: 1.2rem;
+    padding-inline: 1rem;
+    border-radius: 50%;
+    transition: all .3s;
+}
+
+
+
+

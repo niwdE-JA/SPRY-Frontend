@@ -1,0 +1,107 @@
+.foot{
+    background-color: #1f7c49;
+    border-top: 1px solid rgba(255, 255, 255, 0.651);
+    color: white;
+}
+.footContent{
+    padding-block: 1.25rem;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.mid{
+    width: 95%;
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.mid1{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 500;
+    justify-content: space-between;
+    margin:auto;
+}
+.add, .mid p{
+    margin: auto;
+    padding-block: 1rem;
+    color:rgba(255, 255, 255, 0.849);
+}
+
+.mid1 ul{
+    list-style: none;
+    margin: auto;
+    padding: 1rem;
+}
+.mid1 a, .mid li, .add p, .mid p{
+    font-size: 1.4rem;
+    color: white;
+    text-decoration: none
+}
+.mid a:hover{
+    cursor: pointer;
+    color:rgba(255, 255, 255, 0.849);
+}
+.sub, .sub:focus-visible{
+    outline: 0px;
+    color:rgba(255, 255, 255, 0.849);
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.849);
+    border-top-left-radius: 7px;
+    border-bottom-left-radius:7px;
+    padding-block: 12px;
+    padding-inline-start: 1.5rem;
+    width: 5rem;
+    text-align: start;
+}
+.sub::placeholder{
+    color: rgba(255, 255, 255, 0.788);
+    font-size: .7rem;
+    font-weight: 600;
+}
+.ok{
+    background-color: white;
+    padding-block: 12px;
+    padding-inline: 10px;
+    border: 1px solid white;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius:7px;
+    color: #1f7c49;
+    font-weight: bolder;
+    font-size: 1rem;
+    transition: all .3s;
+}
+.ok:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.979);
+}
+.tl li{
+    text-align: left;
+}
+.ml{
+    font-size: 1.2rem;
+    margin-inline:auto;
+}
+.no-list{
+    margin-inline: auto;
+    display: flex;
+    flex-direction: row;
+    width: 15rem;
+    justify-content: space-between;
+}
+.no-list li{
+    list-style: none;
+}
+.no-list a{
+    color: white;
+    transition: all .3s;
+}
+.no-list a:hover{
+    color: rgba(255, 255, 255, 0.583);
+}
+.nxt{
+    height: 7rem;
+}

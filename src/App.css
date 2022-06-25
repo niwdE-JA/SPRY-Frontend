@@ -1,0 +1,70 @@
+.bw{
+    padding-bottom: 2rem;
+}
+
+/* QUERIES FOR ALL PAGES */
+
+@media (max-width:1190px) {
+    .mainPart {width: 70% !important;}
+}
+@media (max-width:1170px) {
+    .abouthalf {max-width: 70% !important;}
+}
+@media (max-width:1024px) {
+    .mainPart {width: 75% !important;}
+}
+@media (max-width:890px) {
+    .mainPart {width: 85% !important;}
+    .card h3{width:fit-content}
+    .list{display: none !important;}
+    .toggler {display: flex !important;}
+    .toggle{display:initial !important}
+    .mainPart {width: 95% !important;}
+    .rplCont{margin: auto !important;}
+}
+@media (max-width:580px) {
+    .register{ width:90% !important;}
+    .navContent{width:85vw !important;}
+    .toggle{padding-inline: 0rem !important;}
+    .vrn{display: none !important;}
+}
+@media (max-width:570px) {
+    .spry_h1 {font-size: 3rem !important;}
+    .h1 {font-size: 4rem !important;}
+    .group{flex-direction: column !important;}
+    .inputContainer {width: 100% !important;}
+    .mainSect {width: 100% !important;}
+    .aboutSect {width: 100% !important;}
+    .abouthalf {margin: auto !important;}
+    .regTxt {width: 85% !important;}
+}
+@media (max-width:450px) {
+    *{font-size: 14px;}
+    .inner{flex-wrap: wrap-reverse !important; margin-block: 1rem;}
+    .mg2{margin:auto !important}
+    .initCont {margin-top: 1em !important;}
+    .shrbx {
+        margin-right: auto !important;
+        margin-left: 1.5rem !important;
+    }
+    .card h3{
+        font-size: 1.3rem !important;
+        margin: 1rem !important;
+        margin-inline: 2rem !important;
+    }
+    .initCont h2 {font-size: 1.5rem !important;}
+    .about_img{width:85% !important;}
+}
+@media (max-width:400px) {
+    .mainSect {width: 95% !important;}
+    *{font-size: 12px;}
+}
+@media (max-width:370px) {
+    .mainSect {width: 100% !important;}
+}
+
+
+
+
+
+

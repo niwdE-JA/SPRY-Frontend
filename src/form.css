@@ -1,0 +1,130 @@
+
+.form{
+    background-color: rgb(233 233 233 / 72%);
+    height: -moz-fit-content;
+    height: fit-content;
+    border-left: 4px solid #01df65;
+    box-shadow: -0.1px 0.1px 0.3rem rgb(0 0 0);
+    padding-bottom: 3rem;
+    padding-inline: 1.5rem;
+}
+.log-in{
+    width: 25rem;
+}
+
+.inputContainer{
+    height: 3.2rem;
+    margin-block: 1.5rem;
+    position: relative;
+}
+.h3{
+    font-size: 2rem;
+    font-weight: 400;
+    color: #0ac55e;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+.input{
+    text-align: left;
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    padding-inline: 1rem;
+    border-color: transparent;
+    border-left:3.5px solid #01df65;
+    transition: all .3s;
+}
+.valid-input {
+    background-color: #e8f0fe;
+}
+.invalid-input {
+    background-color: #fee8e8;
+    border-left: 3.5px solid #e14f4f;
+}
+.input::placeholder{
+    font-size: 1.1rem;
+    margin-left: .5rem;
+}
+.input:placeholder-shown + .inputLabel{
+    top: 2rem;
+    left: 3rem;
+    opacity: 0;
+}
+.input:focus{
+    outline: transparent;
+}
+.inputLabel{
+    color: #01df65;
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 1;
+    transition: all .3s;
+}
+.group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.btn-box{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-block: 1rem;
+}
+.btn, .btn:active{
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #49af54;
+    color: white;
+    border: 0px;
+    padding-inline: 2rem;
+    padding-block: 0.7rem;
+    border-radius: 5px;
+    transition: all .3s;
+}
+.btn:hover {
+    background-color: rgb(15, 104, 55);
+}
+
+.ahref{
+    color: #49af54;
+    text-align: start;
+    transition: all .3s;
+}
+.ahref:hover{
+    color: #307337;
+}
+.red{
+    background-color: #ff27001f;
+    color: #ff0000ad;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-left: 3px solid #ff0000ad;
+    display: flex;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 2px;
+}
+.blue{
+    background-color: #728aff38;
+    color: #455295;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-left: 3px solid #455295;
+    display: flex;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 2px;
+}
+.green{
+    color: #0ac55e;
+    display: flex;
+}
+.sp{
+    padding:1px
+}
