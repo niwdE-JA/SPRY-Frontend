@@ -232,7 +232,9 @@
 
 .dialog{
     width: -moz-fit-content;
+    width: -webkit-fit-content;
     width: fit-content;
+
     padding: 2rem;
     background-color: white;
     margin-inline: auto;
@@ -246,7 +248,9 @@
 }
 .cancel{
     width: -moz-fit-content;
+    width: -webkit-fit-content;
     width: fit-content;
+    
     padding-bottom: 1rem;
     font-size: 2.8rem;
     font-weight: 500;

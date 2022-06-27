@@ -41,13 +41,14 @@ class App extends React.Component {
       loggedin : false, //cookie
       error: false,
       prompt: null, // set to ' fadeout 5s '
+      display: 'none' // set to initial to make it appear
     }
 
     window.addEventListener('hashchange', this.router ) ;
   }
 
   router = ()=>{
-    let hash_route = window.location.href.split('#')[1];
+    let hash_route = this.getHashRoute();
     this.routeChange(hash_route);
   }
 
@@ -57,9 +58,6 @@ class App extends React.Component {
     this.loadAsync(this.loader, 2000);
   }
 
-  loadPage = ()=>{
-    this.loadAsync(this.loader, 2000);
-  }
    
   loadAsync = (callback, timer)=>{
     this.setLoading(true);
@@ -126,7 +124,11 @@ class App extends React.Component {
     }
   }
 
-  getHashRoute = ()=>window.location.href.split('#')[1];
+  getHashRoute = ()=>{
+    let hash = window.location.href.split('?')[0];
+    hash = hash.split('#')[1];
+    return hash;
+  }
 
 
   routeChange= (route)=>{
@@ -318,16 +320,16 @@ class App extends React.Component {
 
 
   prompt_up = () => {
-    this.setState( { prompt: 'fadeout 5s' } )
+    this.setState( { prompt: 'fadeout 5s', display: 'initial' } )
     console.log(this.state.prompt)
 
     setTimeout(() => {
-      this.setState( { prompt: null } )
+      this.setState( { prompt: null, display: 'none' } )
     }, 5000);
   } // to awaken the dialog box
 
   prompt_down = () => {
-    this.setState( { prompt: null } )
+    this.setState( { prompt: null, display: 'none' } )
     console.log(this.state.prompt)
   } // to close the dialog box
 
@@ -347,9 +349,7 @@ class App extends React.Component {
 
           {
           (this.state.error)?
-          <Error
-            reload = {this.loadPage}
-          />
+          <Error />
           :(this.state.route === 'login')?
           <Login
            login = {this.login}
@@ -393,13 +393,16 @@ class App extends React.Component {
             loggedin= {this.state.loggedin}
             prompter = {this.prompt_up} // this can be removed, im using this to trigger the dialog box
           />
-          <Dialog prompt = {this.state.prompt} unprompter = {this.prompt_down}/>
+          <Dialog 
+            prompt = {this.state.prompt} 
+            display = {this.state.display} 
+            unprompter = {this.prompt_down}
+          />
 
         </>
       );
     }
   }
-
 
 
 export default App;

@@ -2,8 +2,8 @@ import React from 'react';
 import { useState } from 'react/cjs/react.development';
 import './Main.css'
 
-const Dialog = ({prompt, unprompter}) => {
-    let [ display, setDisplay ] = useState('initial')
+const Dialog = ({prompt, unprompter, display}) => {
+    // let [ display, setDisplay ] = useState('initial')
 
 
   return (

@@ -8,7 +8,10 @@ const About= ()=> {
     <>
       <section className='aboutSect bw'>
         <div className='abouthalf'>
-          <h1 className='h1'>Welcome to <hr className='hr'/> <span className='spry_h1'>SPRY</span></h1>
+
+          <h1 className='h1'>Welcome to</h1>
+          <h1 className='spry_h1'>SPRY</h1>
+
           <h3 className='h3r'>Developed by NXTHub</h3>
           <div className='smallTxt'>
             <div className='regTxt'>

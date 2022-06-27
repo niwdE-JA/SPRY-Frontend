@@ -1,8 +1,11 @@
 
 .form{
     background-color: rgb(233 233 233 / 72%);
+    
     height: -moz-fit-content;
+    height: -webkit-fit-content;
     height: fit-content;
+
     border-left: 4px solid #01df65;
     box-shadow: -0.1px 0.1px 0.3rem rgb(0 0 0);
     padding-bottom: 3rem;
@@ -96,6 +99,27 @@
 }
 .btn:hover {
     background-color: rgb(15, 104, 55);
+}
+.hollow, .hollow:active, .hollow:visited{
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #49af5300;
+    color: #49af54;
+    border: 2px solid #49af54;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;   
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    border-radius: 0px;
+    transition: all .3s;
+}
+
+.hollow:hover{
+    border: 2px solid #3c8844;
+    color: #2d5e32;
+    transform: scale(1.03);
 }
 
 .ahref{

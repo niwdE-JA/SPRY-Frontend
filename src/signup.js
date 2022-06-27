@@ -159,17 +159,23 @@ const signupHandler = (e)=>{
                             </div>
                         </div>
                         <div className='btn-box'>
-                            <button className='btn'>Sign-up<Ionicons name='IoArrowForward'/></button>
+                            <button className='btn'>Sign-up</button>
                         </div>
                     </form>
                 </div>
                 <div className='halfsect borderLine'>
-                    <h1 className='h1'> Register today with <hr className='hr'/> <span className='spry_h1'>SPRY</span></h1>
+
+                    <h1 className='h1'> Register today with </h1>
+                    <span className='spry_h1'>SPRY</span>
+
                     <h3 className='h3r'>see what people think of you</h3>
                     <div className='smallTxt'>
-                            <div className='regTxt'>
-                            <p>create an account with <span style={{color:'rgb(73 175 84)'  ,fontSize:'1.3rem',fontWeight:'800',textTransform:'uppercase'}}>spry</span> edit your question and share a link with friends, youll never know who comments but you'll see them</p>
-                            </div>
+                        <div className='regTxt'>
+                        <p>create an account with <span style={{color:'rgb(73 175 84)'  ,fontSize:'1.3rem',fontWeight:'800',textTransform:'uppercase'}}>spry</span> edit your question and share a link with friends, youll never know who comments but you'll see them</p>
+                        </div>
+                    </div>
+                    <div className='btn-box'>
+                        <a href = '#login' className='hollow'>login</a>
                     </div>
                 </div>
             </section>      

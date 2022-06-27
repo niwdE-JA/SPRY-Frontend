@@ -46,11 +46,12 @@ const Post = ({loadAsync, loading})=> {
 const reply = async ()=>{
     
     let reply_message = document.getElementById('reply-message').value;
+    let user = 'x@spry.ng'; // getParamsByName()
 
     let body = {
         alias: 'John Doe',//randomly generated?... probably better to do that on the backend
         message: reply_message,
-        email: 'x@spry.ng',//username
+        email: user, //username
         time: Date(),
     }
 

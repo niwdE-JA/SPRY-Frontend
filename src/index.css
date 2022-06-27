@@ -1,14 +1,14 @@
 *{
   font-size: 13.2px;
-  text-align: center;
+  text-align: left;
   align-self: center;
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
 }
 body {
-    font-family: 'Lato', sans-serif;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: 'Plus Jakarta Sans', sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(

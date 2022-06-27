@@ -14,7 +14,9 @@
 }
 .fockerSect{
     height: -moz-fit-content;
+    height: -webkit-fit-content;
     height: fit-content;
+
     width: 80%;
     justify-content: center;
     margin: auto;
@@ -133,8 +135,14 @@
 }
 
 .icon{
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
     height: fit-content;
+    
+    width: -moz-fill-available;
     width: -webkit-fill-available;
+    width: fill-available;
+
     display: flex;
     justify-content: center;
     flex-direction: row;

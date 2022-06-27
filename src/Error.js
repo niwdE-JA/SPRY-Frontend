@@ -1,7 +1,7 @@
 import React from 'react';
 import Ionicons from './Ionicons'
 
-const Error= ({err, reload} )=> { 
+const Error= ({err } )=> { 
   return (
     <section className='mainSect bw'>
         <div>
@@ -15,7 +15,7 @@ const Error= ({err, reload} )=> {
             </div> {/*Possible Solutions*/}
 
             <div className='bt-box'>
-                <a className='btn' onClick={reload}>Reload</a>
+                <a className='btn' onClick={ ()=>window.location.reload() }>Reload</a>
             </div> {/*Reload page*/}
         </div>
     </section>

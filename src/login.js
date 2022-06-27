@@ -84,7 +84,10 @@ const Login=({loadAsync, login, loading, } )=> {
         :
         <section className='register login bw'>
             <div className='halfsect'>
-                <h1 className='h1'> Welcome to <hr className='hr'/><span className='spry_h1'>SPRY</span></h1>
+
+                <h1 className='h1'> Welcome to</h1>
+                <h1 className='spry_h1'>SPRY</h1>
+
                 <h3 className='h3r'>let's see what people think of you</h3>
                 <div className='smallTxt'>
                     <div className='regTxt'>

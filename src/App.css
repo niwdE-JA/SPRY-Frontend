@@ -14,6 +14,8 @@
     .mainPart {width: 75% !important;}
 }
 @media (max-width:890px) {
+    *{text-align: left;}
+    .regTxt{margin: 0% !important;}
     .mainPart {width: 85% !important;}
     .card h3{width:fit-content}
     .list{display: none !important;}
@@ -24,13 +26,15 @@
 }
 @media (max-width:580px) {
     .register{ width:90% !important;}
+    .bod {width: 90% !important;}
+    .halfsect{width: 100% !important;}
     .navContent{width:85vw !important;}
     .toggle{padding-inline-start: 0rem !important; padding-inline-end: 0rem !important;}
     .vrn{display: none !important;}
 }
 @media (max-width:570px) {
     .spry_h1 {font-size: 3rem !important;}
-    .h1 {font-size: 4rem !important;}
+    .h1, .dash {font-size: 4rem !important; display: none;}
     .group{flex-direction: column !important;}
     .inputContainer {width: 100% !important;}
     .mainSect {width: 100% !important;}
