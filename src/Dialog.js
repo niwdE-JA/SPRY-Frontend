@@ -2,13 +2,13 @@ import React from 'react';
 import { useState } from 'react/cjs/react.development';
 import './Main.css'
 
-const Dialog = ({prompt, unprompter, display}) => {
+const Dialog = ({ unprompter, dialog_display}) => {
     // let [ display, setDisplay ] = useState('initial')
 
 
   return (
     <>
-        <div className = 'dialog' style = {{animation: prompt, display: display }} >
+        <div className = {'dialog' + ' ' + ( (dialog_display) ? '': 'invisible') } >
             <h3 className = 'cancel' onClick = { () => { unprompter() } }>+</h3>
             <h3 className = 'h3r'>
                 Dialog message goes here

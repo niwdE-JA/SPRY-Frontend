@@ -41,7 +41,7 @@ class App extends React.Component {
       loggedin : false, //cookie
       error: false,
       prompt: null, // set to ' fadeout 5s '
-      display: 'none' // set to initial to make it appear
+      dialog_display: false
     }
 
     window.addEventListener('hashchange', this.router ) ;
@@ -320,23 +320,19 @@ class App extends React.Component {
 
 
   prompt_up = () => {
-    this.setState( { prompt: 'fadeout 5s', display: 'initial' } )
-    console.log(this.state.prompt)
+    this.setState( {dialog_display: true } );
 
-    setTimeout(() => {
-      this.setState( { prompt: null, display: 'none' } )
-    }, 5000);
   } // to awaken the dialog box
 
   prompt_down = () => {
-    this.setState( { prompt: null, display: 'none' } )
-    console.log(this.state.prompt)
+    this.setState( {dialog_display: false } );
+    
   } // to close the dialog box
 
 
 
-  // logError = (message, callback)=>{
-  //     callback(message);
+  // dialogPrompt = (message, callback)=>{
+
   // }
 
   render(){
@@ -393,9 +389,8 @@ class App extends React.Component {
             loggedin= {this.state.loggedin}
             prompter = {this.prompt_up} // this can be removed, im using this to trigger the dialog box
           />
-          <Dialog 
-            prompt = {this.state.prompt} 
-            display = {this.state.display} 
+          <Dialog  
+            dialog_display = {this.state.dialog_display} 
             unprompter = {this.prompt_down}
           />
 
