@@ -8,6 +8,7 @@ import Login from "./login"
 import About from "./about"
 import Post from './Post'
 import Error from './Error'
+import Dialog from './Dialog'
 import React from 'react'
 import { getdata } from './getdata'
 
@@ -31,7 +32,7 @@ import { getdata } from './getdata'
 class App extends React.Component {
   constructor(){
     super()
-    this.state={
+    this.state = {
       route: '',
       getdata: [], // cached
       inputField: '',
@@ -39,6 +40,7 @@ class App extends React.Component {
       loading: false,
       loggedin : false, //cookie
       error: false,
+      prompt: null, // set to ' fadeout 5s '
     }
 
     window.addEventListener('hashchange', this.router ) ;
@@ -99,9 +101,18 @@ class App extends React.Component {
   }
 
 
+
   getCookie(key){
-    let output_value = document.cookie.replaceAll(' ', '').split(';').find(key_value=>key_value.startsWith(key));
-    
+    // let output_value = document.cookie.replace(' ', '').split(';').find(key_value=>key_value.startsWith(key));
+    function replaceAll(a, b, c){// because 'replaceAll()' is not defined in Edge
+      while (a.includes(b) ){
+        a = a.replace(b, c);
+      }
+      return a;
+    }
+
+    let output_value = replaceAll( document.cookie, ' ', '').split(';').find(key_value=>key_value.startsWith(key));
+
     output_value = (output_value)? output_value.split('=')[1]: null;
 
     return output_value;
@@ -116,7 +127,6 @@ class App extends React.Component {
   }
 
   getHashRoute = ()=>window.location.href.split('#')[1];
-
 
 
   routeChange= (route)=>{
@@ -306,6 +316,23 @@ class App extends React.Component {
   }
 
 
+
+  prompt_up = () => {
+    this.setState( { prompt: 'fadeout 5s' } )
+    console.log(this.state.prompt)
+
+    setTimeout(() => {
+      this.setState( { prompt: null } )
+    }, 5000);
+  } // to awaken the dialog box
+
+  prompt_down = () => {
+    this.setState( { prompt: null } )
+    console.log(this.state.prompt)
+  } // to close the dialog box
+
+
+
   // logError = (message, callback)=>{
   //     callback(message);
   // }
@@ -364,7 +391,9 @@ class App extends React.Component {
           <Footer
             route= {this.state.route} 
             loggedin= {this.state.loggedin}
+            prompter = {this.prompt_up} // this can be removed, im using this to trigger the dialog box
           />
+          <Dialog prompt = {this.state.prompt} unprompter = {this.prompt_down}/>
 
         </>
       );

@@ -68,16 +68,19 @@ const About= ()=> {
 
           <div className='focker_2'>
             <div className='inner'>
-              <div className='mg2'>
+            <div className='mg2'>
                 <ul className='tc'>
                   <span style={{color:'rgb(73 175 84)',fontSize:'1.5rem',fontWeight:'800',textTransform:'uppercase'}}>
                   Roles<br/>
-                  </span> 
-                  Frontend using:
-                  <li className='highlight bold'>React</li> 
-                  <li className='highlight bold'>CSS</li> 
+                  </span>
+                  Frontend Using:<br/>
+                  <span className='highlight bold'> React</span><br/> 
+                  Backend Using:
+                  <li className='highlight bold'>Node, Express JS</li> 
+                  <li className='highlight bold'>postgreSQL</li> 
                 </ul>
-              </div>
+              
+            </div>
               <div className='mg2 ft'>
                 <div className="image-box focker-2">
                   <div className='icon'>

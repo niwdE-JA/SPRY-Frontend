@@ -25,7 +25,7 @@
 @media (max-width:580px) {
     .register{ width:90% !important;}
     .navContent{width:85vw !important;}
-    .toggle{padding-inline: 0rem !important;}
+    .toggle{padding-inline-start: 0rem !important; padding-inline-end: 0rem !important;}
     .vrn{display: none !important;}
 }
 @media (max-width:570px) {
@@ -40,7 +40,7 @@
 }
 @media (max-width:450px) {
     *{font-size: 14px;}
-    .inner{flex-wrap: wrap-reverse !important; margin-block: 1rem;}
+    .inner{flex-wrap: wrap-reverse !important; margin-top: 1rem; margin-bottom: 1rem;}
     .mg2{margin:auto !important}
     .initCont {margin-top: 1em !important;}
     .shrbx {
@@ -50,7 +50,8 @@
     .card h3{
         font-size: 1.3rem !important;
         margin: 1rem !important;
-        margin-inline: 2rem !important;
+        margin-right: 2rem !important;
+        margin-left: 2rem !important;
     }
     .initCont h2 {font-size: 1.5rem !important;}
     .about_img{width:85% !important;}

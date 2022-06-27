@@ -62,8 +62,9 @@
     border-radius: 5px;
     width: 90%;
     box-shadow: 0.1px 0.01px 5px #00000085;
-    margin-block: 1rem;
-    margin-inline: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin: auto;
 }
 .initCont{
     display: flex;
@@ -82,7 +83,8 @@
     background-color: #78c3008a;
     color: #008b3f;
     padding: 0.5rem;
-    padding-inline: 1.284rem;
+    padding-inline-start: 1.284rem;
+    padding-inline-end: 1.284rem;
     border-radius: 500px;
     font-weight: 700;
     cursor: pointer;
@@ -95,7 +97,8 @@
     font-weight: 500;
     word-break: break-word;
     margin: 2rem;
-    margin-inline: 4rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
     font-size: 1.5rem;
 }
 .img{
@@ -103,7 +106,8 @@
     min-height: 5rem;
     background-color: var(--prmryTxtClrL);
     border-radius: 50%;
-    margin-inline: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
     margin-top: 1rem;
 }
 
@@ -116,7 +120,8 @@
     min-height: 3rem;
     background-color: #d5d5d5;
     border-radius: 50%;
-    margin-inline: 0.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
     margin-bottom: auto;
 }
 .rpl{
@@ -160,8 +165,10 @@
     margin-bottom: 1rem;
     border: 0px;
     color: white;
-    padding-inline: 1.5rem;
-    padding-block: 0.7rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
     border-radius: 5px;
     transition: all .3s;
 }
@@ -221,6 +228,39 @@
     background-color: #303258;
 }
 
+/* DIALOG BOX */
+
+.dialog{
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 2rem;
+    background-color: white;
+    margin-inline: auto;
+    box-shadow: 0.1px 0px 7px #b9b9b9;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    padding-top: 0;
+    opacity: 0;
+}
+.cancel{
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-bottom: 1rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #6b6b6b;
+    transform: rotate(45deg);
+    margin-left: auto;
+    cursor: pointer;
+    transition: all .3s;
+}
+.cancel:hover{
+    color: #48ad53;
+}
+
+
 @keyframes rotate {
     0%{
         transform: rotateZ(0deg);
@@ -274,6 +314,17 @@
     }
     100%{
         transform: translateX(0);
+    }
+}
+@keyframes fadeout {
+    0%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
     }
 }
 

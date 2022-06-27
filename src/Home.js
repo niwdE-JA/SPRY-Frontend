@@ -43,10 +43,11 @@ const Home = ({getdata, inputField, user, routeChange, setData, loading, loadAsy
               <div className='shrbx'>
                 <button className='share' onClick = {()=>{
                   //get current user
+                  let share_link = window.location.origin + '/#post?user=' + user ;
                   // generate link. ('#post-' + user)
                   // 'post' route, gets the current user from link, and saves it in state to use in 'answer' function
                   
-                }}>Share link <FaShare className='small-icon center-icon'/></button>
+                }} >Share link <FaShare className='small-icon center-icon'/></button>
               </div>
             </div>
           </div>

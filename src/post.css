@@ -30,7 +30,8 @@
     border: 2.2px solid rgb(73 175 118);
     border-radius: 600px;
     padding-inline-start: 1rem;
-    padding-block: 0.7rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
     height: 3.5rem;
     white-space: normal;
 }
@@ -42,7 +43,8 @@
 .inp::-webkit-scrollbar-thumb {
     background-color: #49af54;
     border-radius: 100px;
-    padding-inline: 5px;
+    padding-inline-start: 5px;
+    padding-inline-end: 5px;
   }
 .shSnt{
     display: flex;
@@ -50,7 +52,8 @@
     width: -moz-fit-content;
     width: fit-content;
     margin-left: auto;
-    margin-block: 0.5rem 0.7rem;
+    margin-top: 0.5rem 0.7rem;
+    margin-bottom: 0.5rem 0.7rem;
 }
 .sh, .sh:active {
     font-size: 1.1rem;
@@ -58,8 +61,10 @@
     cursor: pointer;
     background-color: var(--prmryColor-sub);
     color: white;
-    padding-inline: 2rem;
-    padding-block: 0.55rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
     border-radius: 5px;
     transition: all .3s;
 }
@@ -75,7 +80,8 @@
     background-color: var(--prmryColor-sub);
     color: white;
     padding: 1.2rem;
-    padding-inline: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
     border-radius: 50%;
     transition: all .3s;
 }

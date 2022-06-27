@@ -1,9 +1,11 @@
 .navbar{
     background-color: #1f7c49;
     color: white;
+    height: 3.5rem;
     text-transform: uppercase;
-    padding-block: .7rem;
-    transition:all .3s
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    transition: all .3s;
 }
 .box{
     width: 3rem;
@@ -21,7 +23,7 @@
 }
 .navContent{
     width: 75vw;
-    margin-inline: auto;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -36,7 +38,8 @@
 }
 .listHolder{
     width:fit-content;
-    margin-block: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     display: flex;
 }
 .toggle{
@@ -44,7 +47,8 @@
     font-size: 2rem;
     font-weight: 900;
     cursor: pointer;
-    padding-inline: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
     position: relative;
     margin-left: auto;
     text-align: center;
@@ -58,7 +62,8 @@
 .toggler {
     margin: 0px;
     writing-mode: vertical-lr;
-    margin-inline: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
     display: none;
 }
 .tgglist{
@@ -67,9 +72,8 @@
     list-style: none;
     color: #1f7c49;
     min-width: max-content;
-    padding-inline: .2rem;
-    padding-block: .2rem;
-    top: 2rem;
+    padding: 0.5rem 1rem;
+    top: 1.5rem;
     right: 35%;
     text-transform: capitalize;
     box-shadow: -0.2px 0.2px 5px #201e1e;
@@ -84,8 +88,10 @@
 .tgglist li{
     background-color: white;
     width: 100%;
-    padding-inline: 2.2rem;
-    padding-block: 0.3rem;
+    padding-inline-start: 2.2rem;
+    padding-inline-end: 2.2rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
     display: flex;
 }
 .tgglist li:hover{
@@ -102,7 +108,8 @@
     display: flex;
 }
 .list li{
-    margin-inline: 0.75rem;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
     display: flex;
 }
 .list a {
@@ -116,7 +123,8 @@
     font-size: .9rem;
     font-weight: 700;
     transition: all .2s;
-    padding-block: .3rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
 }
 .black a{
     color: rgba(255, 255, 255, 0.981);
@@ -129,12 +137,14 @@
     color: rgb(114 255 223);
     height: 1.5rem;
     width: 1.5rem;
-    margin-inline: 0.3rem;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
 }
 .y{
     height: 1.5rem;
     width: 1.5rem;
-    margin-inline: 0.3rem;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
 }
 .toggled{
     color: #1f7c49;
@@ -168,7 +178,8 @@
 .click{
     background-color: #f8f8f8;
     height: 2.5rem;
-    padding-inline: 5px;
+    padding-inline-start: 5px;
+    padding-inline-end: 5px;
     border: 2px solid #f8f8f8;
     color: #49af54;
     font-weight: bolder;
@@ -182,18 +193,21 @@
     background-color: rgb(217 225 70/ 42%);
     width: fit-content;
     margin: auto;
-    padding-inline: 0.1rem;
+    padding-inline-start: 0.1rem;
+    padding-inline-end: 0.1rem;
     color: rgb(23 157 0);
     font-weight: 700;
 }
 .bold{
     padding: 0.2rem;
-    padding-inline: 0.6rem;
+    padding-inline-start: 0.6rem;
+    padding-inline-end: 0.6rem;
     border-radius: 2px;
 }
 
 ion-icon{
-    margin-inline: 0.35rem;
+    margin-right: 0.35rem;
+    margin-left: 0.35rem;
     height: 1.5em;
     width: 1.5em;
 }

@@ -6,7 +6,9 @@
     border-left: 4px solid #01df65;
     box-shadow: -0.1px 0.1px 0.3rem rgb(0 0 0);
     padding-bottom: 3rem;
-    padding-inline: 1.5rem;
+    padding-top: 1rem;
+    padding-inline-start: 1.5rem;    
+    padding-inline-end:1.5rem;
 }
 .log-in{
     width: 25rem;
@@ -14,7 +16,8 @@
 
 .inputContainer{
     height: 3.2rem;
-    margin-block: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     position: relative;
 }
 .h3{
@@ -29,7 +32,8 @@
     height: 3rem;
     width: 100%;
     font-size: 1rem;
-    padding-inline: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;   
     border-color: transparent;
     border-left:3.5px solid #01df65;
     transition: all .3s;
@@ -73,7 +77,8 @@
     display: flex;
     justify-content: space-between;
     width: 50%;
-    margin-block: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .btn, .btn:active{
     font-size: 1.1rem;
@@ -82,8 +87,10 @@
     background-color: #49af54;
     color: white;
     border: 0px;
-    padding-inline: 2rem;
-    padding-block: 0.7rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;   
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
     border-radius: 5px;
     transition: all .3s;
 }

@@ -4,7 +4,7 @@ import './Footer.css'
 import Ionicons from './Ionicons';
 import logo from './assets/icon.svg'
 
-const Footer=({route, loggedin})=> {
+const Footer=({route, loggedin, prompter})=> {
 
   return (
     <footer>
@@ -34,7 +34,7 @@ const Footer=({route, loggedin})=> {
         </div>
         <div className='foot'>
             <div className='footContent'>
-                <h3 className='ml'>Copyright Next_Hub 2022</h3>
+                <h3 className='ml' onClick = { prompter } >Copyright Next_Hub 2022</h3>
                 <ul className='no-list'>
                     <li><a href=""><Ionicons className='small_medium-icon' name='IoLogoFacebook'/></a></li>
                     <li><a href=""><Ionicons className='small_medium-icon' name='IoLogoInstagram'/></a></li>

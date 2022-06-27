@@ -1,29 +1,48 @@
 .small-icon{
     height: 1rem;
     width: 1rem;
-    margin-inline: .5rem;
+    margin-right: .5rem;
+    margin-left: .5rem;
+
 }
 .small_medium-icon{
     height: 1.5rem;
     width: 1.5rem;
-    margin-inline: .5rem;
+    margin-right: .5rem;
+    margin-left: .5rem;
+
 }
 .medium-icon{
     height: 2rem;
     width: 2rem;
-    margin-inline: .5rem;
+    margin-right: .5rem;
+    margin-left: .5rem;
+    margin-bottom: .3rem;
+
 }
 .medium_big-icon{
     height: 2.5rem;
     width: 2.5rem;
-    margin-inline: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
 }
 .big-icon{
     height: 3rem;
     width: 3rem;
-    margin-inline: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+.giant-icon{
+    height: 10rem;
+    width: 10rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 .center-icon{
-    margin-inline : .2rem;
+    margin-right : .2rem;
     margin-top : 0.2rem;
+}
+.redish{
+    color: #d51c1c;
 }
