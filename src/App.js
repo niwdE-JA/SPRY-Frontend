@@ -6,27 +6,20 @@ import Home from "./Home"
 import Signup from "./signup"
 import Login from "./login"
 import About from "./about"
+import CrossPlatform from './CrossPlatform'
+import Mobile from './Mobile'
 import Post from './Post'
 import Error from './Error'
 import Dialog from './Dialog'
 import React from 'react'
-import { getdata } from './getdata'
 
 // test 'Access-Control-Allow-Origin' to see if ports are accounted for.
-// Make 'post' use proper dates
-// Restrict the cookie check go specific routes
-// Mistake: switching from onClick to onHashChange
-// Build Error logger (logError() )
-// consider including routechange in login, to avoid bugs from redirection.
-// consider calling 'logout' from 'signup' route too!
 // consider changing error logging system to be more passive, and include message from server --involves server
 // remember to restructure and modularize this codebase
-// create id system for 'post' link --involves server// restructure database on server to match this
 
 // make 'share' button work
-// update 'Home' to use 'loadAsync'
+// use dialog box to log all necessary information
 
-// update 'Home' to use User's names 
 //call 'getComments' everytime an action(w/ event listeners) is performed on home. Use this to replace problematic setInterval
 
 class App extends React.Component {
@@ -40,7 +33,6 @@ class App extends React.Component {
       loading: false,
       loggedin : false, //cookie
       error: false,
-      prompt: null, // set to ' fadeout 5s '
       dialog_display: false
     }
 
@@ -125,8 +117,8 @@ class App extends React.Component {
   }
 
   getHashRoute = ()=>{
-    let hash = window.location.href.split('?')[0];
-    hash = hash.split('#')[1];
+    let hash = window.location.href.split('?')[0]; // separates query params
+    hash = hash.split('#')[1]; // separates hash
     return hash;
   }
 
@@ -322,7 +314,7 @@ class App extends React.Component {
   prompt_up = () => {
     this.setState( {dialog_display: true } );
 
-  } // to awaken the dialog box
+  } // to display the dialog box
 
   prompt_down = () => {
     this.setState( {dialog_display: false } );
@@ -348,11 +340,10 @@ class App extends React.Component {
           <Error />
           :(this.state.route === 'login')?
           <Login
-           login = {this.login}
-           loadAsync = {this.loadAsync}
-           loading = {this.state.loading}
-           />
-
+            login = {this.login}
+            loadAsync = {this.loadAsync}
+            loading = {this.state.loading}
+          />
           :(this.state.route === 'home')?
           <Home
            routeChange={this.routeChange}
@@ -365,7 +356,9 @@ class App extends React.Component {
            />
 
           :(this.state.route === 'about')?
-          <About/>
+          <About
+            loading = {this.state.loading}
+          />
 
           :(this.state.route === 'post')?
           <Post
@@ -374,20 +367,20 @@ class App extends React.Component {
           />
 
           :(this.state.route === 'signup')?
-          <Signup
-           signup = {this.signup}
-           loading = {this.state.loading}
-           loadAsync = {this.loadAsync}
-          />
+            <Signup
+            signup = {this.signup}
+            loading = {this.state.loading}
+            loadAsync = {this.loadAsync}
+            />
 
           :<Main/>
 
           }
-          {/* <Error/> */}
+          
           <Footer
             route= {this.state.route} 
             loggedin= {this.state.loggedin}
-            prompter = {this.prompt_up} // this can be removed, im using this to trigger the dialog box
+            prompter = {this.prompt_up} // this SHOULD be removed, I'm using this to trigger the dialog box.
           />
           <Dialog  
             dialog_display = {this.state.dialog_display} 
@@ -397,7 +390,8 @@ class App extends React.Component {
         </>
       );
     }
-  }
+
+}
 
 
 export default App;

@@ -3,6 +3,7 @@ import Main from './Main';
 import './form.css'
 import './register.css'
 import Ionicons from './Ionicons';
+import Mobile from './Mobile';
 
 const Signup=({signup, loadAsync, loading} )=> {
 
@@ -115,9 +116,12 @@ const signupHandler = (e)=>{
     return (
         <>
         {
-        (loading)?
+        (loading )?
         <Main/>
-        :<div className='bod'>
+        :<></>
+        }
+
+        <div className='bod'>
             <section className='register bw'>
                 <div className='halfsect'>
                     <form className='form' onSubmit={ signupHandler } >
@@ -171,7 +175,7 @@ const signupHandler = (e)=>{
                     <h3 className='h3r'>see what people think of you</h3>
                     <div className='smallTxt'>
                         <div className='regTxt'>
-                        <p>create an account with <span style={{color:'rgb(73 175 84)'  ,fontSize:'1.3rem',fontWeight:'800',textTransform:'uppercase'}}>spry</span> edit your question and share a link with friends, youll never know who comments but you'll see them</p>
+                        <p>Create an account, Share your link with friends, Check the comments in your home, You'll never know who comments.</p>
                         </div>
                     </div>
                     <div className='btn-box'>
@@ -179,14 +183,12 @@ const signupHandler = (e)=>{
                     </div>
                 </div>
             </section>      
-            </div>
-            }
+        </div>
+        
+        <Mobile/>
         </>
     );
 }
-
-
-
 
 
 export default Signup;

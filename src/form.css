@@ -21,7 +21,6 @@
     height: 3.2rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    position: relative;
 }
 .h3{
     font-size: 2rem;
@@ -39,7 +38,7 @@
     padding-inline-end: 1rem;   
     border-color: transparent;
     border-left:3.5px solid #01df65;
-    transition: all .3s;
+    transition: all .2s;
 }
 .valid-input {
     background-color: #e8f0fe;
@@ -83,6 +82,13 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+.btns-box{
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 .btn, .btn:active{
     font-size: 1.1rem;
     font-weight: 500;
@@ -113,7 +119,9 @@
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
     border-radius: 0px;
-    transition: all .3s;
+    transition: all .2s;
+    margin-right: 1rem;
+    margin-top: 1rem;
 }
 
 .hollow:hover{
@@ -122,10 +130,34 @@
     transform: scale(1.03);
 }
 
+.btns, .btns:active, .btns:visited{
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #49af53;
+    color: white;
+    border: 2px solid #49af54;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;   
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    border-radius: 0px;
+    transition: all .2s;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.btns:hover{
+    background-color: #295c2e;
+    border: 2px solid #295c2e;
+    transform: scale(1.03);
+}
+
 .ahref{
     color: #49af54;
     text-align: start;
-    transition: all .3s;
+    transition: all .2s;
 }
 .ahref:hover{
     color: #307337;

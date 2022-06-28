@@ -180,3 +180,6 @@
     height: 6em;
     width:6em;
 }
+.fit-height{
+    min-height: fit-content;
+}

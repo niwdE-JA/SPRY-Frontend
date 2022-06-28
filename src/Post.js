@@ -7,14 +7,16 @@ import './post.css'
 const Post = ({loadAsync, loading})=> { 
   return (
       <>
-      {
+        {
         (loading)?
         <Main/>
-        :
+        :<></>
+        }
         <section className='mainSect bw'>
             <div className='mainPart'>
                 <div className='conten'>
-                    <h3 className='h3r '>Post a comment</h3>
+                    <h3 className='h3r post'>Post a comment</h3>
+                    <h3 className = 'lower'>let them know what you think</h3>
                     <div className='card'>
                         <div className='initCont'>
                             <div className='img'><img/></div>
@@ -29,14 +31,14 @@ const Post = ({loadAsync, loading})=> {
                         </div>
 
                         <a className='shSnt snd' onClick={ ()=>{loadAsync( reply, 1000 )}} >
-                            <Ionicons name='IoSend' />
+                            <Ionicons className={'small_medium-icon'} name='IoSend' />
                         </a>
                     </div>
                 </div>
 
             </div>
         </section>
-      }
+
       </>
     
   );
@@ -46,7 +48,7 @@ const Post = ({loadAsync, loading})=> {
 const reply = async ()=>{
     
     let reply_message = document.getElementById('reply-message').value;
-    let user = 'x@spry.ng'; // getParamsByName()
+    let user = getParameterByName('user');
 
     let body = {
         alias: 'John Doe',//randomly generated?... probably better to do that on the backend
@@ -56,18 +58,19 @@ const reply = async ()=>{
     }
 
     let res, data;
-    res = await fetch('http://localhost:8080/answer' ,
-    {
-        method: 'POST',
-        credentials: 'include',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body) ,
-    } );
-
-    data = await res.json() ;
     try{ 
+        res = await fetch('http://localhost:8080/answer' ,
+        {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body) ,
+        } );
+
+        data = await res.json() ;
+
         if(data){
             console.log(data);
           if(data.status === 201){
@@ -81,11 +84,21 @@ const reply = async ()=>{
         }else{
             console.log('afagtrht')
         }
-     }catch(err){
+    }catch(err){
         console.log("Errorrrr");
         console.log(err);
         // console.log(body);
-     }
+        //show error dialog
+    }
+
+    function getParameterByName(name, url = window.location.href){
+        name = name.replace(/[\[\]]/g, '\\$&' );
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)' ),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
 }
 
 export default Post;

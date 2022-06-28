@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Main from './Main';
 import Ionicons from './Ionicons'
+import CrossPlatform from './CrossPlatform'
 
 const Login=({loadAsync, login, loading, } )=> {
 
@@ -79,20 +80,25 @@ const Login=({loadAsync, login, loading, } )=> {
     return (
         <>
         {
-        (loading)?
+        (loading )?
         <Main/>
-        :
+        :<></>
+        }
+        
         <section className='register login bw'>
             <div className='halfsect'>
 
                 <h1 className='h1'> Welcome to</h1>
-                <h1 className='spry_h1'>SPRY</h1>
+                 <h1 className='spry_h1'>SPRY</h1>
 
                 <h3 className='h3r'>let's see what people think of you</h3>
                 <div className='smallTxt'>
                     <div className='regTxt'>
                     <p>login to <span style={{color:'rgb(73 175 84)',fontSize:'1.3rem',fontWeight:'800',textTransform:'uppercase'}}>spry</span> and see what your friends have been saying about you, You'll never know who comments but you'll see their comments</p>
                     </div>
+                </div>
+                <div className='btn-box'>
+                    <a href = '#signup' className='hollow'>Register</a>
                 </div>
             </div>
             <div className='halfsect'>
@@ -133,8 +139,9 @@ const Login=({loadAsync, login, loading, } )=> {
                 </form>
             </div>
         </section>
-        }
-    </>
+
+        <CrossPlatform/> 
+        </>
     );
 }
 

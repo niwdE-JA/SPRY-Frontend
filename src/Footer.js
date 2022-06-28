@@ -17,13 +17,13 @@ const Footer=({route, loggedin, prompter})=> {
                             route= {route} 
                             loggedin= {loggedin}
                             />
-                            <li><a>Contact us</a></li>
+                            <li><a href='https://wa.me/+2348105966585'>Contact us</a></li>
                         </ul>
                         <ul className ='tl'>
-                            <li><a href='https://wa.me/+2348105966585'>Facebook</a><ion-icons className='logo-facebook'></ion-icons></li>
-                            <li><a href='https://wa.me/+2348105966585'>Instagram</a><ion-icons className='logo-instagram'></ion-icons></li>
-                            <li><a href='https://wa.me/+2348105966585'>Github</a><ion-icons className='logo-whatsapp'></ion-icons></li>
-                            <li><a href='https://wa.me/+2348105966585'>LinkedIn</a><ion-icons className='logo-whatsapp'></ion-icons></li>
+                            <li><a href='https://wa.me/+2348105966585'>Facebook</a></li>
+                            <li><a href='https://wa.me/+2348105966585'>Instagram</a></li>
+                            <li><a href='https://wa.me/+2348105966585'>Github</a></li>
+                            <li><a href='https://wa.me/+2348105966585'>LinkedIn</a></li>
                         </ul>
                         <ul className ='tl'>
                             <img className='nxt' src ={logo}/>

@@ -12,6 +12,7 @@
 .loadSect{
     min-height: 70vh;
     width: 80%;
+    position: fixed;
     justify-content: center;
     margin: auto;
     display: flex;
@@ -180,54 +181,52 @@
 /*   ANIMATIONS   */
 
 
-.newton_box{
-    height: calc(30*var(--anim-objects));
-    width: calc(40*var(--anim-objects));
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    animation: rotate 1.5s infinite;
-}
-.container_1, .container_2{
+.container{
     display: flex;
     flex-direction: row;
 }
-.container_1{
-    justify-content: space-between;
-    animation: translaterY 1.5s infinite;
-}
-.container_2{
+.contain{
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    animation: translaterY_inverted 1.5s infinite;
-
+    padding: 2rem;
 }
-.newton{
-    height: calc(10*var(--anim-objects));
-    width: calc(10*var(--anim-objects));
-    border-radius: 100%;
-    box-shadow: -3px 0px 20px #80808069;
-    
+.block{
+    width: .5rem;
+    height: 1rem;
+    margin-right: .25rem;
 }
-.ball-1, .ball-2{
-    animation: translaterX_inverted 1.5s infinite;
+.one{
+    animation: strech 1s infinite ;
 }
-
-.ball-3, .ball-4{
-    animation: translaterX 1.5s infinite;
+.two{
+    animation: strech 1s infinite .2s;
 }
-.ball-1{
-    background-color: #008b8b;
+.three{
+    animation: strech 1s infinite .4s;
 }
-.ball-2{
-    background-color: #d9a600;
+.four{
+    animation: strech 1s infinite .6s;
 }
-.ball-3{
-    background-color: #74d900;
-}
-.ball-4{
-    background-color: #303258;
+.five{
+    animation: strech 1s infinite .8s;
 }
 
+@keyframes strech {
+    0%{
+        transform: scaleY(1);
+        background-color: green;
+
+    }
+    50%{
+        transform: scaleY(1.5);
+        background-color: rgb(49, 255, 59);
+    }
+    100%{
+        transform: scaleY(1);
+        background-color: green;
+    }
+}
 /* DIALOG BOX */
 
 .dialog{
@@ -244,6 +243,20 @@
     left: 50%;
     transform: translate(-50%, -70%);
     padding-top: 0;
+    z-index: 100;
+}
+.load{
+    min-width: 25rem;
+    padding: 1rem 6rem;
+}
+.background-dim{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #0000009e;
 }
 .cancel{
     width: -moz-fit-content;
@@ -262,75 +275,7 @@
 .cancel:hover{
     color: #48ad53;
 }
-
-
-@keyframes rotate {
-    0%{
-        transform: rotateZ(0deg);
-    }
-    50%{
-        transform: rotateZ(180deg);
-    }
-    100%{
-        transform: rotateZ(360deg);
-    }
-}
-@keyframes translaterY {
-    0%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(100%);
-    }
-    100%{
-        transform: translateY(0);
-    }
-}
-@keyframes translaterY_inverted {
-    0%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(-100%);
-    }
-    100%{
-        transform: translateY(0);
-    }
-}
-@keyframes translaterX{
-    0%{
-        transform: translateX(0);
-    }
-    50%{
-        transform: translateX(-100%);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-@keyframes translaterX_inverted {
-    0%{
-        transform: translateX(0);
-    }
-    50%{
-        transform: translateX(100%);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-@keyframes fadeout {
-    0%{
-        opacity: 1;
-    }
-    80%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-
 .whitespace{
     white-space: pre-wrap;
 }
+

@@ -15,6 +15,8 @@
 }
 @media (max-width:890px) {
     *{text-align: left;}
+    .fockers {width: 100% !important;}
+    .login {width: 100% !important;}
     .regTxt{margin: 0% !important;}
     .mainPart {width: 85% !important;}
     .card h3{width:fit-content}
@@ -22,10 +24,11 @@
     .toggler {display: flex !important;}
     .toggle{display:initial !important}
     .mainPart {width: 95% !important;}
+    .abouthalf {margin: 2em !important;}
+    .halfsect {margin: 2em !important;}
     .rplCont{margin: auto !important;}
 }
 @media (max-width:580px) {
-    .register{ width:90% !important;}
     .bod {width: 90% !important;}
     .halfsect{width: 100% !important;}
     .navContent{width:85vw !important;}
@@ -39,7 +42,6 @@
     .inputContainer {width: 100% !important;}
     .mainSect {width: 100% !important;}
     .aboutSect {width: 100% !important;}
-    .abouthalf {margin: auto !important;}
     .regTxt {width: 85% !important;}
 }
 @media (max-width:450px) {

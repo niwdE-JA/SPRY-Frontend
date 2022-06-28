@@ -31,14 +31,9 @@ class Navigation extends React.Component {
                 <div className='navContent'>
                     <div className='title'>
                         <div className="box">
-                            <div className="container">
-                                <div className="ball"></div>
-                                <div className="ball"></div>
-                            </div>
-                            <div className="container">
-                                <div className="ball"></div>
-                                <div className="ball"></div>
-                            </div>
+                            <div class="flat"></div>
+                            <div class="flat middle"></div>
+                            <div class="flat"></div>
                         </div>
                         <h3>
                             spry

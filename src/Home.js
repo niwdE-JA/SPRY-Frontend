@@ -11,6 +11,32 @@ const Home = ({getdata, inputField, user, routeChange, setData, loading, loadAsy
     return comment.alias.toLowerCase().includes(inputField.toLowerCase()) || comment.message.toLowerCase().includes(inputField.toLowerCase())
   })
 
+  function copyText(text){
+    var text_area = document.createElement("textarea");
+    text_area.value = text;
+
+    text_area.style.top = "0";
+    text_area.style.left = "0";
+    text_area.style.position = "fixed";
+
+    document.body.appendChild(text_area);
+    text_area.focus();
+    text_area.select();
+
+    try{
+      var successful = document.execCommand('copy');
+      if(successful){
+        //
+      }else{
+        //
+      }
+    } catch(err){
+      console.log('failed to copy');
+    }
+
+    document.body.removeChild(text_area);
+  }
+
 
   useEffect(()=>{
     //
@@ -25,10 +51,12 @@ const Home = ({getdata, inputField, user, routeChange, setData, loading, loadAsy
   return (
     
     <>
-    {
+      {
       (loading )?
       <Main/>
-      :
+      :<></>
+      }
+    
       <section className='mainSect bw'>
 
         <div className='mainPart'>
@@ -42,11 +70,10 @@ const Home = ({getdata, inputField, user, routeChange, setData, loading, loadAsy
               <h3>What do you think of me?</h3>
               <div className='shrbx'>
                 <button className='share' onClick = {()=>{
-                  //get current user
+                  // generate link with username as query params
                   let share_link = window.location.origin + '/#post?user=' + user ;
-                  // generate link. ('#post-' + user)
-                  // 'post' route, gets the current user from link, and saves it in state to use in 'answer' function
-                  
+                  //call share link intent or use copy-to-clipboard to store string
+                  copyText(share_link);
                 }} >Share link <FaShare className='small-icon center-icon'/></button>
               </div>
             </div>
@@ -55,7 +82,7 @@ const Home = ({getdata, inputField, user, routeChange, setData, loading, loadAsy
         </div>
 
       </section>
-    }
+      
     </>
   );
 }

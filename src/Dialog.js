@@ -1,10 +1,7 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
 import './Main.css'
 
-const Dialog = ({ unprompter, dialog_display}) => {
-    // let [ display, setDisplay ] = useState('initial')
-
+const Dialog = ({ unprompter, dialog_display, message}) => {
 
   return (
     <>
@@ -14,7 +11,7 @@ const Dialog = ({ unprompter, dialog_display}) => {
                 Dialog message goes here
             </h3>
             <div className = 'regTxt' style = {{ paddingBottom: '1.5rem'}}>
-                <p>details of message goes here</p> 
+                <p>Details of message goes here</p>
             </div>
             <a onClick = { () => { unprompter() } } className = 'btn'>
                 OK

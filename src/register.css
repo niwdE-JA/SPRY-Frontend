@@ -10,7 +10,7 @@
 }
 .bod{
     width:80%;
-    min-height: 80vh;
+    min-height: 100vh;
     margin:auto;
     display: flex;
     flex-direction: column;
@@ -27,11 +27,18 @@
 }
 .login{
     width:80%;
+    height: 100vh;
     flex-wrap: wrap;
+    margin: auto;
 }
 .h1{
     font-size: 5rem;
     font-weight: 400;
+    color: #5a5a5a;
+}
+.h1-alt{
+    font-size: 5rem;
+    font-weight: 600;
     color: #5a5a5a;
 }
 .h3r{
@@ -49,7 +56,7 @@
 }
 
 .regTxt{
-    width: 90%;
+    width: 100%;
     margin-top: 1rem;
     margin-bottom: 1rem;
     color: #5e5e5e;
