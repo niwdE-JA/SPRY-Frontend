@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import Main from './Main';
 import Ionicons from './Ionicons'
 import CrossPlatform from './CrossPlatform'
 
-const Login=({loadAsync, login, loading, } )=> {
+const Login=({loadAsync, login, } )=> {
 
     //might change this
     // useEffect(()=>{
@@ -79,12 +78,6 @@ const Login=({loadAsync, login, loading, } )=> {
 
     return (
         <>
-        {
-        (loading )?
-        <Main/>
-        :<></>
-        }
-        
         <section className='register login bw'>
             <div className='halfsect'>
 

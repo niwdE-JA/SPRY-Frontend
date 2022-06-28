@@ -1,17 +1,12 @@
 import React from 'react';
 import Ionicons from './Ionicons'
-import Main from './Main'
 import './Main.css'
 import './post.css'
 
-const Post = ({loadAsync, loading})=> { 
+const Post = ({loadAsync })=> { 
   return (
       <>
-        {
-        (loading)?
-        <Main/>
-        :<></>
-        }
+      
         <section className='mainSect bw'>
             <div className='mainPart'>
                 <div className='conten'>

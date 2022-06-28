@@ -1,17 +1,12 @@
 import React from 'react';
 import './about.css'
 import './icons.css'
-import Main from './Main';
 import Ionicons from './Ionicons';
 
-const About= ({loading})=> {
+const About= ()=> {
   return (
     <>
-      {
-      (loading )?
-      <Main/>
-      :<></>
-      }
+    
       <section className='aboutSect bw'>
         <div className='abouthalf'>
 

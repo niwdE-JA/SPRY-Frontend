@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import Main from './Main';
 import './form.css'
 import './register.css'
 import Ionicons from './Ionicons';
 import Mobile from './Mobile';
 
-const Signup=({signup, loadAsync, loading} )=> {
+const Signup=({signup, loadAsync, } )=> {
 
     //might change this
 //   useEffect(()=>{
@@ -115,11 +114,6 @@ const signupHandler = (e)=>{
 
     return (
         <>
-        {
-        (loading )?
-        <Main/>
-        :<></>
-        }
 
         <div className='bod'>
             <section className='register bw'>

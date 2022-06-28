@@ -6,8 +6,6 @@ import Home from "./Home"
 import Signup from "./signup"
 import Login from "./login"
 import About from "./about"
-import CrossPlatform from './CrossPlatform'
-import Mobile from './Mobile'
 import Post from './Post'
 import Error from './Error'
 import Dialog from './Dialog'
@@ -336,19 +334,23 @@ class App extends React.Component {
             searChange={this.searChange} />
 
           {
+          (this.state.loading )?
+          <Main/>
+          :<></>
+          }
+        
+          {
           (this.state.error)?
           <Error />
           :(this.state.route === 'login')?
           <Login
             login = {this.login}
             loadAsync = {this.loadAsync}
-            loading = {this.state.loading}
           />
           :(this.state.route === 'home')?
           <Home
            routeChange={this.routeChange}
            loadAsync = {this.loadAsync}
-           loading= {this.state.loading}
            getdata= {this.state.getdata}
            setData= {this.setData}
            user= {this.state.user}
@@ -356,23 +358,18 @@ class App extends React.Component {
            />
 
           :(this.state.route === 'about')?
-          <About
-            loading = {this.state.loading}
-          />
+          <About />
 
           :(this.state.route === 'post')?
           <Post
            loadAsync = {this.loadAsync}
-           loading= {this.state.loading}
           />
 
           :(this.state.route === 'signup')?
-            <Signup
-            signup = {this.signup}
-            loading = {this.state.loading}
-            loadAsync = {this.loadAsync}
-            />
-
+          <Signup
+          signup = {this.signup}
+          loadAsync = {this.loadAsync}
+          />
           :<Main/>
 
           }

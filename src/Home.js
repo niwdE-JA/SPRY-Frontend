@@ -1,11 +1,10 @@
 import React, {useEffect} from 'react';
 import CommentList from './CommentList';
-import Main from './Main';
 import './Main.css'
 import { FaShare } from 'react-icons/fa'
 // import { useEffect } from 'react/cjs/react.production.min';
 
-const Home = ({getdata, inputField, user, routeChange, setData, loading, loadAsync })=> {
+const Home = ({getdata, inputField, user, routeChange, setData, loadAsync })=> {
   
   const filtered= getdata.filter(comment=>{
     return comment.alias.toLowerCase().includes(inputField.toLowerCase()) || comment.message.toLowerCase().includes(inputField.toLowerCase())
@@ -49,13 +48,7 @@ const Home = ({getdata, inputField, user, routeChange, setData, loading, loadAsy
   }, []);
 
   return (
-    
     <>
-      {
-      (loading )?
-      <Main/>
-      :<></>
-      }
     
       <section className='mainSect bw'>
 
