@@ -243,7 +243,7 @@
     left: 50%;
     transform: translate(-50%, -70%);
     padding-top: 0;
-    z-index: 100;
+    z-index: 10;
 }
 .load{
     min-width: 25rem;
@@ -255,7 +255,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 100;
     background-color: #0000009e;
 }
 .cancel{

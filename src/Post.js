@@ -3,7 +3,61 @@ import Ionicons from './Ionicons'
 import './Main.css'
 import './post.css'
 
-const Post = ({loadAsync })=> { 
+const Post = ({loadAsync, setDialog})=> { 
+
+    const reply = async ()=>{
+        
+        let reply_message = document.getElementById('reply-message').value;
+        let user = getParameterByName('user');
+
+        let body = {
+            alias: 'John Doe',//randomly generated?... probably better to do that on the backend
+            message: reply_message,
+            email: user, //username
+            time: Date(),
+        }
+
+        let res, data;
+        try{ 
+            res = await fetch('http://localhost:8080/answer' ,
+            {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body) ,
+            } );
+
+            data = await res.json() ;
+
+            if(data){
+                console.log(data);
+                if(data.status === 201){
+                    console.log('successful post');
+                    document.getElementById('reply-message').value = '';
+                    setDialog('Message sent succesfully.', 'Your friend should see your message ASAP!');
+            
+                }else if(data.status === 401){
+                    console.log('post failed due to auth reasons');
+                    setDialog('Error:  Failed to send message.', 'Authentication error.');
+                }else{
+                    console.log( 'post failed for some reason');
+                    setDialog('Error:  Failed to send message.', 'Unexpected error.');
+                } 
+            }else{
+                console.log('unexpected error');
+                setDialog('An unexpected error occured', 'Message may not have been sent');
+            }
+        }catch(err){
+            console.log("Errorrrr");
+            console.log(err);
+            //show error dialog
+            setDialog('An unexpected error occured', 'Message may not have been sent');
+        }
+
+    }
+
   return (
       <>
       
@@ -15,7 +69,7 @@ const Post = ({loadAsync })=> {
                     <div className='card'>
                         <div className='initCont'>
                             <div className='img'><img/></div>
-                            <h2>john doe</h2>
+                            <h2>{getParameterByName('user')}</h2>
                             <div className='edit-bt'></div>
                         </div>
                         <h3>What do you think about me? I'll never know it's you</h3>
@@ -37,63 +91,18 @@ const Post = ({loadAsync })=> {
       </>
     
   );
+
+
 }
 
-
-const reply = async ()=>{
-    
-    let reply_message = document.getElementById('reply-message').value;
-    let user = getParameterByName('user');
-
-    let body = {
-        alias: 'John Doe',//randomly generated?... probably better to do that on the backend
-        message: reply_message,
-        email: user, //username
-        time: Date(),
-    }
-
-    let res, data;
-    try{ 
-        res = await fetch('http://localhost:8080/answer' ,
-        {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body) ,
-        } );
-
-        data = await res.json() ;
-
-        if(data){
-            console.log(data);
-          if(data.status === 201){
-            console.log('successful post');
-    
-          }else if(data.status === 401){
-            console.log('post failed due to auth reasons');
-          }else{
-            console.log( 'signup failed for some reason');
-          } 
-        }else{
-            console.log('afagtrht')
-        }
-    }catch(err){
-        console.log("Errorrrr");
-        console.log(err);
-        // console.log(body);
-        //show error dialog
-    }
-
-    function getParameterByName(name, url = window.location.href){
-        name = name.replace(/[\[\]]/g, '\\$&' );
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)' ),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
+function getParameterByName(name, url = window.location.href){
+    name = name.replace(/[\[\]]/g, '\\$&' );
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)' ),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
 
 export default Post;

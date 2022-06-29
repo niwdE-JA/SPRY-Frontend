@@ -15,8 +15,9 @@ import React from 'react'
 // consider changing error logging system to be more passive, and include message from server --involves server
 // remember to restructure and modularize this codebase
 
-// make 'share' button work
 // use dialog box to log all necessary information
+// reset scroll on routeChange
+// make submit button dull for invalid form
 
 //call 'getComments' everytime an action(w/ event listeners) is performed on home. Use this to replace problematic setInterval
 
@@ -31,13 +32,19 @@ class App extends React.Component {
       loading: false,
       loggedin : false, //cookie
       error: false,
-      dialog_display: false
+      dialog_display: false,
+      message : 'Dialog message goes here',
+      description: 'Details of the message'
     }
 
     window.addEventListener('hashchange', this.router ) ;
   }
 
-  router = ()=>{
+  setDialog = (message, description ) => {
+    this.setState({ message, description, dialog_display: true } );
+  }
+
+  router = () => {
     let hash_route = this.getHashRoute();
     this.routeChange(hash_route);
   }
@@ -48,20 +55,20 @@ class App extends React.Component {
     this.loadAsync(this.loader, 2000);
   }
 
-   
-  loadAsync = (callback, timer)=>{
+
+  loadAsync = (callback, timer) => {
     this.setLoading(true);
     const timeout_promise = new Promise((resolve, reject)=>{
       setTimeout(resolve, timer);
     } ); //A promise-based timer.
     
     Promise.all([callback() , timeout_promise])
-    .then( (res)=>{
+    .then( (res) => {
       this.setLoading(false);
     });
   }
 
-  loader = async ()=>{
+  loader = async () => {
     //
     let loggedin = this.getCookie('loggedin');
     let user = this.getCookie('user');
@@ -114,14 +121,14 @@ class App extends React.Component {
     }
   }
 
-  getHashRoute = ()=>{
+  getHashRoute = () => {
     let hash = window.location.href.split('?')[0]; // separates query params
     hash = hash.split('#')[1]; // separates hash
     return hash;
   }
 
 
-  routeChange= (route)=>{
+  routeChange= (route) => {
     //First, handle invalid routes...
     if( !(route in {'home': 0, 'login': 0, 'signup': 0, 'post': 0, 'about': 0, }) ){
       return this.setState({error: true});
@@ -149,6 +156,8 @@ class App extends React.Component {
       //special case when 'routeChange' is not called from hashChange
       window.location.href = "#"+ route;
     }
+
+    window.scroll(0,0);
 
   }
   
@@ -251,7 +260,8 @@ class App extends React.Component {
       console.log("Error logging in : Please check your internet connection and try again.");
       console.log(err);
       //
-      logError('Invalid username or password');
+      logError('Error: Please check your connection.');
+      this.setDialog('Failed to login','Check network and try again.');
       this.routeChange('login'); //To handle signup case where 'login' is called from 'signup'. This is a no-op is route is already on 'login' 
     }
 
@@ -303,6 +313,7 @@ class App extends React.Component {
         console.log("Error : ");
         console.log(err);
         logError( 'Error: Please check your connection.' );
+        this.setDialog('Failed to register','Check network and try again.');
      }
   
   }
@@ -320,10 +331,6 @@ class App extends React.Component {
   } // to close the dialog box
 
 
-
-  // dialogPrompt = (message, callback)=>{
-
-  // }
 
   render(){
       return (
@@ -355,6 +362,7 @@ class App extends React.Component {
            setData= {this.setData}
            user= {this.state.user}
            inputField={this.state.inputField}
+           setDialog= {this.setDialog}
            />
 
           :(this.state.route === 'about')?
@@ -363,6 +371,7 @@ class App extends React.Component {
           :(this.state.route === 'post')?
           <Post
            loadAsync = {this.loadAsync}
+           setDialog= {this.setDialog}
           />
 
           :(this.state.route === 'signup')?
@@ -379,11 +388,15 @@ class App extends React.Component {
             loggedin= {this.state.loggedin}
             prompter = {this.prompt_up} // this SHOULD be removed, I'm using this to trigger the dialog box.
           />
-          <Dialog  
-            dialog_display = {this.state.dialog_display} 
+          {
+          (this.state.dialog_display)?
+          <Dialog
             unprompter = {this.prompt_down}
+            message = {this.state.message}
+            description = {this.state.description}
           />
-
+          :<></>
+          }
         </>
       );
     }

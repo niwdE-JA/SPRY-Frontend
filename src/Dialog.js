@@ -1,17 +1,17 @@
 import React from 'react';
 import './Main.css'
 
-const Dialog = ({ unprompter, dialog_display, message}) => {
+const Dialog = ({ unprompter, message, description }) => {
 
-  return (
+    return (
     <>
-        <div className = {'dialog' + ' ' + ( (dialog_display) ? '': 'invisible') } >
+        <div className = {'dialog' } >
             <h3 className = 'cancel' onClick = { () => { unprompter() } }>+</h3>
             <h3 className = 'h3r'>
-                Dialog message goes here
+                { message }
             </h3>
             <div className = 'regTxt' style = {{ paddingBottom: '1.5rem'}}>
-                <p>Details of message goes here</p>
+                <p> { description } </p>
             </div>
             <a onClick = { () => { unprompter() } } className = 'btn'>
                 OK
