@@ -14,9 +14,7 @@ import React from 'react'
 // test 'Access-Control-Allow-Origin' to see if ports are accounted for.
 // consider changing error logging system to be more passive, and include message from server --involves server
 // remember to restructure and modularize this codebase
-
-// use dialog box to log all necessary information
-// reset scroll on routeChange
+// Use secure cookies
 // make submit button dull for invalid form
 
 //call 'getComments' everytime an action(w/ event listeners) is performed on home. Use this to replace problematic setInterval
@@ -67,7 +65,7 @@ class App extends React.Component {
       this.setLoading(false);
     });
   }
-
+  
   loader = async () => {
     //
     let loggedin = this.getCookie('loggedin');
@@ -261,7 +259,9 @@ class App extends React.Component {
       console.log(err);
       //
       logError('Error: Please check your connection.');
-      this.setDialog('Failed to login','Check network and try again.');
+      setTimeout(()=>{
+        this.setDialog('Failed to login','Check network and try again.');
+      }, 1000);
       this.routeChange('login'); //To handle signup case where 'login' is called from 'signup'. This is a no-op is route is already on 'login' 
     }
 
@@ -313,7 +313,9 @@ class App extends React.Component {
         console.log("Error : ");
         console.log(err);
         logError( 'Error: Please check your connection.' );
-        this.setDialog('Failed to register','Check network and try again.');
+        setTimeout(()=>{
+          this.setDialog('Failed to register','Check network and try again.');
+        }, 1000);
      }
   
   }
@@ -386,7 +388,6 @@ class App extends React.Component {
           <Footer
             route= {this.state.route} 
             loggedin= {this.state.loggedin}
-            prompter = {this.prompt_up} // this SHOULD be removed, I'm using this to trigger the dialog box.
           />
           {
           (this.state.dialog_display)?

@@ -15,12 +15,15 @@
 }
 .log-in{
     width: 25rem;
+    margin: auto;
 }
 
 .inputContainer{
+    display: flex;
+    flex-direction: column;
     height: 3.2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 .h3{
     font-size: 2rem;
@@ -34,8 +37,7 @@
     height: 3rem;
     width: 100%;
     font-size: 1rem;
-    padding-inline-start: 1rem;
-    padding-inline-end: 1rem;   
+    padding: 1rem 1rem;   
     border-color: transparent;
     border-left:3.5px solid #01df65;
     transition: all .2s;
@@ -52,18 +54,17 @@
     margin-left: .5rem;
 }
 .input:placeholder-shown + .inputLabel{
-    top: 2rem;
-    left: 3rem;
+    /* top: 2rem;
+    left: 3rem; */
     opacity: 0;
 }
 .input:focus{
     outline: transparent;
 }
 .inputLabel{
+    text-align: left;
+    width: 100%;
     color: #01df65;
-    position: absolute;
-    top: 3rem;
-    left: 1rem;
     font-size: 1.1rem;
     font-weight: 500;
     opacity: 1;
@@ -93,6 +94,7 @@
     font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
+    margin-right: 1rem;
     background-color: #49af54;
     color: white;
     border: 0px;

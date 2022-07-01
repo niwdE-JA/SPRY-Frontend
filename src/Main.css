@@ -1,7 +1,17 @@
 
 .mainSect{
     min-height: 70vh;
-    width: 80%;
+    width: 90%;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-bottom: 1rem;
+}
+.mainSect-alt {
+    min-height: 70vh;
+    width: 95%;
     justify-content: center;
     margin: auto;
     display: flex;
@@ -33,6 +43,14 @@
     height: 100vh;
     align-self: initial;
 }
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
 .mainPart{
     background-color: rgba(255, 255, 255, 0);
     display: flex;
@@ -56,12 +74,12 @@
     border-top: 0px;
 }
 .card{
-    min-height: 80%;
+    min-height: 100%;
     background-color: rgb(233 233 233 / 55%);
     border: 0.2px solid #5a5a5a30;
     border-left: .415rem solid var(--prmryColor-sub);
     border-radius: 5px;
-    width: 90%;
+    width: 100%;
     box-shadow: 0.1px 0.01px 5px #00000085;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -91,22 +109,23 @@
     cursor: pointer;
 }
 .card h3{
-    width: 80%;
+    width: 100%;
     color: var(--prmryTxtClrL);
     align-self: start;
     text-align: start;
     font-weight: 500;
     word-break: break-word;
-    margin: 2rem;
-    margin-right: 4rem;
-    margin-left: 4rem;
+
+    padding: 2rem;
     font-size: 1.5rem;
 }
 .img{
-    min-width: 5rem;
-    min-height: 5rem;
+    width: 5rem;
+    height: 5rem;
+    border: 2px solid #01bd01;
     background-color: var(--prmryTxtClrL);
     border-radius: 50%;
+    overflow: hidden;
     margin-right: 1rem;
     margin-left: 1rem;
     margin-top: 1rem;
@@ -118,8 +137,10 @@
 }
 .imgRpl{
     min-width: 3rem;
-    min-height: 3rem;
+    height: 3rem;
+    overflow: hidden;
     background-color: #d5d5d5;
+    border: 2px solid #01bd01;
     border-radius: 50%;
     margin-right: 0.5rem;
     margin-left: 0.5rem;
@@ -152,8 +173,9 @@
 }
 .shrbx{
     display: flex;
-    justify-content: space-between;
-    width: 50%;
+    justify-content: left;
+    padding-bottom: 1rem;
+    width: 80%;
     margin-right: auto;
     margin-left: 3rem;
 }
@@ -273,9 +295,30 @@
     transition: all .3s;
 }
 .cancel:hover{
-    color: #48ad53;
+    color: #ff0000ad;
 }
 .whitespace{
     white-space: pre-wrap;
+}
+
+.scroll{
+    height: 40vh;
+    width:90%;
+    overflow-y: scroll;
+}
+.scroll::-webkit-scrollbar{
+    width: 8px;
+    border: 1px solid #d4d4d4;
+    background: #d5d5d5;
+  }
+.scroll::-webkit-scrollbar-thumb {
+background-color: #49af54;
+border-radius: 100px;
+padding-inline-start: 5px;
+padding-inline-end: 5px;
+}
+.auto-bottom{
+    margin-bottom: auto;
+    margin-top: 8%;
 }
 

@@ -98,7 +98,7 @@ const signupHandler = (e)=>{
             async ()=>{
                 await signup(firstname, lastname, email, password, logError );
             },
-            2000
+            1000
         );
     }else{
         // do nothing
@@ -161,7 +161,7 @@ const signupHandler = (e)=>{
                         </div>
                     </form>
                 </div>
-                <div className='halfsect borderLine'>
+                <div className='abouthalf'>
 
                     <h1 className='h1'> Register today with </h1>
                     <span className='spry_h1'>SPRY</span>

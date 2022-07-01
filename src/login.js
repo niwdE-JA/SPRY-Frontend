@@ -62,7 +62,7 @@ const Login=({loadAsync, login, } )=> {
                 async ()=>{
                     await login(email, password, logError);
                 },
-                2000
+                1000
             );
         }else{
             // do nothing
@@ -78,8 +78,8 @@ const Login=({loadAsync, login, } )=> {
 
     return (
         <>
-        <section className='register login bw'>
-            <div className='halfsect'>
+        <section className='register login bw animated'>
+            <div className='abouthalf slide-left'>
 
                 <h1 className='h1'> Welcome to</h1>
                  <h1 className='spry_h1'>SPRY</h1>
@@ -94,7 +94,7 @@ const Login=({loadAsync, login, } )=> {
                     <a href = '#signup' className='hollow'>Register</a>
                 </div>
             </div>
-            <div className='halfsect'>
+            <div className='halfsect slide-right'>
                 <form className='log-in form' id='login-form' onSubmit={ loginHandler } >
 
                     <div className='sp'>

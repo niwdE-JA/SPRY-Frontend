@@ -6,11 +6,13 @@
     height: -webkit-fit-content;
     height: fit-content;
 
-    width: -moz-fill-available;
-    width: -webkit-fill-available;
-    width: fill-available;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
 
     border-top: 0px;
+    margin: 3rem;
+    width: 80%;
 }
 .cnt{
     width: 80%;

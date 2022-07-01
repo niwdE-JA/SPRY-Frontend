@@ -18,12 +18,12 @@
     .fockers {width: 100% !important;}
     .login {width: 100% !important;}
     .regTxt{margin: 0% !important;}
-    .mainPart {width: 85% !important;}
     .card h3{width:fit-content}
     .list{display: none !important;}
     .toggler {display: flex !important;}
+    .scroll {height: auto !important; overflow-y: unset !important;}
     .toggle{display:initial !important}
-    .mainPart {width: 95% !important;}
+    .mainPart {width: 100% !important;}
     .abouthalf {margin: 2em !important;}
     .halfsect {margin: 2em !important;}
     .rplCont{margin: auto !important;}
@@ -42,7 +42,6 @@
     .inputContainer {width: 100% !important;}
     .mainSect {width: 100% !important;}
     .aboutSect {width: 100% !important;}
-    .regTxt {width: 85% !important;}
 }
 @media (max-width:450px) {
     *{font-size: 14px;}

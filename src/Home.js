@@ -2,9 +2,11 @@ import React, {useEffect} from 'react';
 import CommentList from './CommentList';
 import './Main.css'
 import { FaShare } from 'react-icons/fa'
+import { FaArrowCircleRight } from 'react-icons/fa';
+import { IoRefreshCircle } from 'react-icons/io5';
 // import { useEffect } from 'react/cjs/react.production.min';
 
-const Home = ({getdata, inputField, user, routeChange, setData, loadAsync, setDialog })=> {
+const Home = ({ getdata, inputField, user, routeChange, setData, loadAsync, setDialog })=> {
   
   const filtered= getdata.filter(comment=>{
     return comment.alias.toLowerCase().includes(inputField.toLowerCase()) || comment.message.toLowerCase().includes(inputField.toLowerCase())
@@ -59,25 +61,35 @@ const Home = ({getdata, inputField, user, routeChange, setData, loadAsync, setDi
         setData(data['content']);
         
       }else if(data.status === 204){
-
         setData([]);
+        //
+        setTimeout(()=>{
+          setDialog('No comments yet ','Share link with your friends and see their comments!');
+        }, 1000);
+
       }else if(data.status === 401){
         // getting comments failed for auth reasons
         // clear cookies
         // on any action, switch to logout
         console.log(data)
-        setDialog('Authentication error','Logging out...');
+        setTimeout(()=>{
+          setDialog('Authentication error','Logging out...');
+        }, 1000);
         routeChange('login');
       }else{
         //getting comments failed for some reason
         console.log(data);
-        setDialog('Failed to Load comments','Try again.');
+        setTimeout(()=>{
+          setDialog('Failed to Load comments','Try again.');
+        }, 1000);
       }
       
     }catch(err){
       console.log("Fetching error : ");
       console.log(err);
-      setDialog('Failed to Load comments','Check network and try again.');
+      setTimeout(()=>{
+        setDialog('Failed to Load comments','Check network and try again.');
+      }, 1000);
     }
 
   }
@@ -86,7 +98,7 @@ const Home = ({getdata, inputField, user, routeChange, setData, loadAsync, setDi
     //
     loadAsync(
       async ()=>{
-          await getComments(user, setData, routeChange );
+          await getComments(user, setData, routeChange,);
       },
       1000
     );
@@ -95,30 +107,49 @@ const Home = ({getdata, inputField, user, routeChange, setData, loadAsync, setDi
   return (
     <>
     
-      <section className='mainSect bw'>
-
-        <div className='mainPart'>
-          <div className='content'>
-            <div className='card'>
-              <div className='initCont'>
-                <div className='img'><img/></div>
-                <h2>{user}</h2>
-                <div className='edit-bt'></div>
-              </div>
-              <h3>What do you think of me?</h3>
-              <div className='shrbx'>
-                <button className='share' onClick = {()=>{
-                  // generate link with username as query params
-                  let share_link = window.location.origin + '/#post?user=' + user ;
-                  //call share link intent or use copy-to-clipboard to store string
-                  copyText(share_link);
-                  setDialog('Copied to clipboard','You can now share your link with your friends!');
-                }} >Share link <FaShare className='small-icon center-icon'/></button>
+      <section className='mainSect-alt bw'>
+        <div className = 'row'>
+          <img src='homer.png' className='about_img auto-bottom'/>
+          <div className='mainPart'>
+            <div className='conten'>
+              <h3 className='h3r post'>Check out your Comments</h3>
+              <h3 className = 'lower'>See what people have been saying about you.</h3>
+              <div className='card'>
+                <div className='initCont'>
+                  <div className='img'>
+                      <img src = 'image-neutral.jpg' style = {{ height: '5rem', width: '5rem' }}/>
+                  </div>
+                  <h2>{user}</h2>
+                  <div className='edit-bt'></div>
+                </div>
+                <h3>What do you think of me?</h3>
+                <div className='shrbx'>
+                  <button className='btn' onClick = {()=>{
+                    // generate link with username as query params
+                    let share_link = window.location.origin + '/#post?user=' + user ;
+                    //call share link intent or use copy-to-clipboard to store string
+                    copyText(share_link);
+                    setDialog('Copied to clipboard','You can now share your link with your friends!');
+                  }} >Share link <FaShare className='small-icon center-icon'/></button>
+                  <button className = 'btn'
+                    onClick={()=>{
+                      loadAsync(
+                        async ()=>{
+                            await getComments(user, setData, routeChange,);
+                        },
+                        1000
+                      );
+                    } }>Reload<IoRefreshCircle className='small-icon center-icon'/></button>
+                </div>
               </div>
             </div>
-          </div>
-          <CommentList comments={filtered} value={inputField} />
+            <div className = 'scroll'>
+              <CommentList comments={filtered} value={inputField} />              
+            </div>
+
+          </div>          
         </div>
+
 
       </section>
       

@@ -9,9 +9,9 @@ const Post = ({loadAsync, setDialog})=> {
         
         let reply_message = document.getElementById('reply-message').value;
         let user = getParameterByName('user');
-
+        let firstname = ['John', 'Jane'][Math.round(Math.random(0, 1) )] ;
         let body = {
-            alias: 'John Doe',//randomly generated?... probably better to do that on the backend
+            alias: firstname + ' Doe', //randomly generated?... probably better to do that on the backend
             message: reply_message,
             email: user, //username
             time: Date(),
@@ -36,24 +36,34 @@ const Post = ({loadAsync, setDialog})=> {
                 if(data.status === 201){
                     console.log('successful post');
                     document.getElementById('reply-message').value = '';
-                    setDialog('Message sent succesfully.', 'Your friend should see your message ASAP!');
+                    setTimeout(()=>{
+                        setDialog('Message sent succesfully.', 'Your friend should see your message ASAP!');
+                      }, 1000);
             
                 }else if(data.status === 401){
                     console.log('post failed due to auth reasons');
-                    setDialog('Error:  Failed to send message.', 'Authentication error.');
+                    setTimeout(()=>{
+                        setDialog('Error:  Failed to send message.', 'Authentication error.');
+                      }, 1000);
                 }else{
                     console.log( 'post failed for some reason');
-                    setDialog('Error:  Failed to send message.', 'Unexpected error.');
+                    setTimeout(()=>{
+                        setDialog('Error:  Failed to send message.', 'Unexpected error.');
+                      }, 1000);
                 } 
             }else{
                 console.log('unexpected error');
-                setDialog('An unexpected error occured', 'Message may not have been sent');
+                setTimeout(()=>{
+                    setDialog('An unexpected error occured', 'Message may not have been sent');
+                  }, 1000);
             }
         }catch(err){
             console.log("Errorrrr");
             console.log(err);
             //show error dialog
-            setDialog('An unexpected error occured', 'Message may not have been sent');
+            setTimeout(()=>{
+                setDialog('An unexpected error occured', 'Message may not have been sent');
+              }, 1000);
         }
 
     }
@@ -62,30 +72,35 @@ const Post = ({loadAsync, setDialog})=> {
       <>
       
         <section className='mainSect bw'>
-            <div className='mainPart'>
-                <div className='conten'>
-                    <h3 className='h3r post'>Post a comment</h3>
-                    <h3 className = 'lower'>let them know what you think</h3>
-                    <div className='card'>
-                        <div className='initCont'>
-                            <div className='img'><img/></div>
-                            <h2>{getParameterByName('user')}</h2>
-                            <div className='edit-bt'></div>
+            <div className = 'row'>
+                <img src='posts.png' className='about_img'/> 
+                <div className='mainPart'>
+                    <div className='conten'>
+                        <h3 className='h3r post'>Post a comment</h3>
+                        <h3 className = 'lower'>let them know what you think</h3>
+                        <div className='card'>
+                            <div className='initCont'>
+                                <div className='img'>
+                                    <img src = 'image-neutral.jpg' style = {{ height: '5rem', width: '5rem' }}/>
+                                </div>
+                                <h2>{getParameterByName('user')}</h2>
+                                <div className='edit-bt'></div>
+                            </div>
+                            <h3>What do you think about me? I'll never know it's you</h3>
                         </div>
-                        <h3>What do you think about me? I'll never know it's you</h3>
-                    </div>
-                    <div className='cnt'>
-                        <div className='txtbox'>
-                            <textarea id='reply-message' type='text' placeholder='Message' className='inp'/>
+                        <div className='cnt'>
+                            <div className='txtbox'>
+                                <textarea id='reply-message' type='text' placeholder='Message' className='inp'/>
+                            </div>
+
+                            <a className='shSnt snd' onClick={ ()=>{loadAsync( reply, 1000 )}} >
+                                <Ionicons className={'small_medium-icon'} name='IoSend' />
+                            </a>
                         </div>
-
-                        <a className='shSnt snd' onClick={ ()=>{loadAsync( reply, 1000 )}} >
-                            <Ionicons className={'small_medium-icon'} name='IoSend' />
-                        </a>
                     </div>
-                </div>
-
+                </div>                
             </div>
+
         </section>
 
       </>

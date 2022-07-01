@@ -35,10 +35,12 @@ const About= ()=> {
             Creators
           </span>
           <hr className='hr'/> 
- 
         </h1>
-        <div className='fockers'>
+        <h3 className = 'h3r'>Nxt_Hub Developers</h3>
+        <div className='fockers'>     
           <div className='focker_1'>
+            <div className = 'bottom-right border'></div>            
+            <div className = 'top-left border'></div>            
             <div className='inner'>
               <div className='mg2'>
                 <ul className='tc'>
@@ -69,8 +71,10 @@ const About= ()=> {
               </div>
             </div>
           </div>
-
+        
           <div className='focker_2'>
+            <div className = 'bottom-right border'></div>            
+            <div className = 'top-left border'></div>            
             <div className='inner'>
             <div className='mg2'>
                 <ul className='tc'>
@@ -98,7 +102,7 @@ const About= ()=> {
                 </div>
                 <h2 className='h3a tc highlight'>Edwin O.H</h2>
                 <p style={{fontSize:'1rem'}}>oti.edwin@yahoo.com<br/>
-                 +234 810 596 6585</p>             
+                +234 810 596 6585</p>             
               </div>
             </div>
           </div>
