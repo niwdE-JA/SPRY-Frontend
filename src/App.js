@@ -27,6 +27,7 @@ class App extends React.Component {
       getdata: [], // cached
       inputField: '',
       user: '',//cookie
+      fullname: ['', ''],
       loading: false,
       loggedin : false, //cookie
       error: false,
@@ -40,6 +41,9 @@ class App extends React.Component {
 
   setDialog = (message, description ) => {
     this.setState({ message, description, dialog_display: true } );
+  }
+  setFullname = (fullname)=>{
+    this.state.fullname = fullname;
   }
 
   router = () => {
@@ -178,7 +182,7 @@ class App extends React.Component {
         'connect.sid':''
       },  1);
     
-    this.setState({loggedin: false});
+    this.setState({loggedin: false, user: '', fullname: ['',''], getdata: [] });
 
     //send logout request asynchronously
     fetch('http://localhost:8080/logout' ,
@@ -218,7 +222,7 @@ class App extends React.Component {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(body) ,
-      } );
+      } ); // logs in and creates session
 
       data = await res.json();
       
@@ -228,7 +232,7 @@ class App extends React.Component {
         if(data.status === 201){
           console.log('successful login');
           
-          this.setState({user: data.user, loggedin: true});
+          this.setState({user: data.user, fullname: [ data.firstname, data.lastname ], loggedin: true});
           //set cookie to have logged in value
           // setCookie({cookie_object}, maxAgeSeconds);
           this.setCookie(
@@ -242,7 +246,7 @@ class App extends React.Component {
             console.log('login failed due to auth reasons');
             logError('login failed due to auth reasons');
             this.routeChange('login'); //To handle signup case where 'login' is called from 'signup'. This is a no-op is route is already on 'login' 
-            // set cookie to have loggedout value
+            
         }else{
             console.log( 'login failed for some reason');
             logError('login failed for some reason');
@@ -363,6 +367,8 @@ class App extends React.Component {
            getdata= {this.state.getdata}
            setData= {this.setData}
            user= {this.state.user}
+           fullname= {this.state.fullname}
+           setFullname= {this.setFullname}
            inputField={this.state.inputField}
            setDialog= {this.setDialog}
            />

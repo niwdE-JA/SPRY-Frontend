@@ -45,7 +45,7 @@ class Navigation extends React.Component {
                             <ul className={this.state.tgglState}>
                                 <Navitems 
                                     route = {this.props.route}
-                                    logged = {this.props.loggedin}
+                                    loggedin = {this.props.loggedin}
                                     toggled = 'toggled'
                                 />
                             </ul>

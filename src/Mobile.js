@@ -4,15 +4,15 @@ const Mobile=()=>{
 
   return (
     <>
-        <h1 className='h1 tc'>
+        <h1 className='h1 tc mc slide-up'>
             {"We're here for "}
-            <span style={{color:'rgb(73 175 84)',fontSize:'5rem', fontWeight:'600'}}>
+            <span className = 'h1' style={{color:'rgb(73 175 84)',fontSize:'5rem', fontWeight:'600'}}>
             YOU
             </span>
             <hr className='hr'/> 
         </h1>
         <section className='aboutSect bw fit-height'>
-            <div className='abouthalf'>
+            <div className='abouthalf slide-left'>
             <h1 className='h1'>Mobile Support</h1>
             <h1 className='spry_h1'>SPRY</h1>
 
@@ -28,7 +28,7 @@ const Mobile=()=>{
                 <a href = '#login' className='btns'>log in</a>
             </div>
             </div>
-            <img src='mobile.png' className='about_img'/>
+            <img src='mobile.png' className='about_img slide-right'/>
         </section>    
     </>
 

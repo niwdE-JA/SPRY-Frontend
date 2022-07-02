@@ -6,7 +6,7 @@ import { FaArrowCircleRight } from 'react-icons/fa';
 import { IoRefreshCircle } from 'react-icons/io5';
 // import { useEffect } from 'react/cjs/react.production.min';
 
-const Home = ({ getdata, inputField, user, routeChange, setData, loadAsync, setDialog })=> {
+const Home = ({ getdata, inputField, user, fullname, setFullname, routeChange, setData, loadAsync, setDialog })=> {
   
   const filtered= getdata.filter(comment=>{
     return comment.alias.toLowerCase().includes(inputField.toLowerCase()) || comment.message.toLowerCase().includes(inputField.toLowerCase())
@@ -40,8 +40,9 @@ const Home = ({ getdata, inputField, user, routeChange, setData, loadAsync, setD
 
   const getComments = async (user, setData, routeChange )=>{
     // if (! user) return;
+    
+    let res, data ;
 
-    let res, data;
     
     try{
       res = await fetch('http://localhost:8080/home/' + user ,
@@ -51,9 +52,14 @@ const Home = ({ getdata, inputField, user, routeChange, setData, loadAsync, setD
           } );
 
       data = await res.json();
-    
+      
+      if( !(fullname[0] && fullname[1]) ){ //'fullname' is not defined, possibly due to page refresh or other reasons 
+        let value = await getUser(user);
+        if(!value) throw new TypeError();  
+      }
+      
       console.log(data);
-      if(data.status === 201 ){
+      if(data.status === 201){
         console.log('Comments loaded successfuly');
         
         console.log(data);
@@ -74,8 +80,10 @@ const Home = ({ getdata, inputField, user, routeChange, setData, loadAsync, setD
         console.log(data)
         setTimeout(()=>{
           setDialog('Authentication error','Logging out...');
+          setTimeout(()=>{
+            routeChange('login');
+          }, 500);
         }, 1000);
-        routeChange('login');
       }else{
         //getting comments failed for some reason
         console.log(data);
@@ -92,6 +100,35 @@ const Home = ({ getdata, inputField, user, routeChange, setData, loadAsync, setD
       }, 1000);
     }
 
+  }
+
+  const getUser = async (userid)=>{
+    let res, user_data;
+    try{
+      res = await fetch('http://localhost:8080/user/' + userid ,
+        {
+          method: 'GET',
+          credentials: 'include',
+        } );
+
+      user_data = await res.json();
+    
+      console.log(user_data);
+      
+      if(user_data && user_data.status >= 200 && user_data.status < 300){
+        setFullname([ user_data.firstname, user_data.lastname ]);
+        return user_data.status;
+      }else{
+        return null;
+      }
+
+    }catch(err){
+      console.log("Fetching error : ");
+      console.log(err);
+
+      return null;
+    }
+    
   }
 
   useEffect(()=>{
@@ -119,7 +156,7 @@ const Home = ({ getdata, inputField, user, routeChange, setData, loadAsync, setD
                   <div className='img'>
                       <img src = 'image-neutral.jpg' style = {{ height: '5rem', width: '5rem' }}/>
                   </div>
-                  <h2>{user}</h2>
+                  <h2>{fullname[0] + ' ' + fullname[1]}</h2>
                   <div className='edit-bt'></div>
                 </div>
                 <h3>What do you think of me?</h3>

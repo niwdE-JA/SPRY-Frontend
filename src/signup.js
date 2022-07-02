@@ -114,72 +114,70 @@ const signupHandler = (e)=>{
 
     return (
         <>
+            <div className='bod'>
+                <section className='register bw'>
+                    <div className='abouthalf'>
+                        <form className='form' onSubmit={ signupHandler } >
+                            <h3 className='h3'>Register</h3>
+                            <div className='sp'>
+                                <div id='info' className={'red ' + ( (error_visible) ? '' : 'invisible') }>
+                                    <Ionicons className='small_medium-icon' name='IoInformationCircle' />
+                                    <h3>{error}</h3> 
+                                </div> 
+                            </div>
+                            <div className='sp'>
+                                <div id='info' className={'blue ' + ( (visible) ? '' : 'invisible')}>
+                                    <Ionicons className='small_medium-icon' name='IoInformationCircle' />
+                                    <h3>{message}</h3> 
+                                </div> 
+                            </div>
+                            <div className='group'>
+                                <div className='inputContainer'>
+                                    <input className={'input ' + (validFirstname ? 'valid-input': 'invalid-input')} type='text' id='firstname' onInput={validator} placeholder='First Name' />
+                                    <label className='inputLabel' >First Name</label>
+                                </div>
+                                <div className='inputContainer'>
+                                    <input className={'input ' + (validLastname ? 'valid-input': 'invalid-input')} type='text' id='lastname' onInput={validator} placeholder='Last Name' />
+                                    <label className='inputLabel'>Last Name</label>
+                                </div>
+                            </div>
+                            <div className='inputContainer'>
+                                <input className={'input ' + (validEmail ? 'valid-input': 'invalid-input')} type='email' id='email' onInput={validator} placeholder='Email Address' />
+                                <label className='inputLabel'>Email Address</label>
+                            </div>
+                            <div className='group'>
+                                <div className='inputContainer'>
+                                    <input className={'input ' + (validPassword ? 'valid-input': 'invalid-input')} id='password' type='password' onInput={validator} placeholder='Password' />
+                                    <label className='inputLabel' htmlFor='password'>Password</label>
+                                </div>
+                                <div className='inputContainer'>
+                                    <input className={'input ' + (validConfirm ? 'valid-input': 'invalid-input')} id='confirm_password' type='password' onInput={validator} placeholder='Confirm Password' />
+                                    <label className='inputLabel' htmlFor='confirm_password'>Confirm Password</label>
+                                </div>
+                            </div>
+                            <div className='btn-box'>
+                                <button className='btn'>Sign-up</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div className='halfsect'>
 
-        <div className='bod'>
-            <section className='register bw'>
-                <div className='halfsect'>
-                    <form className='form' onSubmit={ signupHandler } >
-                        <h3 className='h3'>Register</h3>
-                        <div className='sp'>
-                            <div id='info' className={'red ' + ( (error_visible) ? '' : 'invisible') }>
-                                <Ionicons className='small_medium-icon' name='IoInformationCircle' />
-                                <h3>{error}</h3> 
-                            </div> 
-                        </div>
-                        <div className='sp'>
-                            <div id='info' className={'blue ' + ( (visible) ? '' : 'invisible')}>
-                                <Ionicons className='small_medium-icon' name='IoInformationCircle' />
-                                <h3>{message}</h3> 
-                            </div> 
-                        </div>
-                        <div className='group'>
-                            <div className='inputContainer'>
-                                <input className={'input ' + (validFirstname ? 'valid-input': 'invalid-input')} type='text' id='firstname' onInput={validator} placeholder='First Name' />
-                                <label className='inputLabel' >First Name</label>
-                            </div>
-                            <div className='inputContainer'>
-                                <input className={'input ' + (validLastname ? 'valid-input': 'invalid-input')} type='text' id='lastname' onInput={validator} placeholder='Last Name' />
-                                <label className='inputLabel'>Last Name</label>
-                            </div>
-                        </div>
-                        <div className='inputContainer'>
-                            <input className={'input ' + (validEmail ? 'valid-input': 'invalid-input')} type='email' id='email' onInput={validator} placeholder='Email Address' />
-                            <label className='inputLabel'>Email Address</label>
-                        </div>
-                        <div className='group'>
-                            <div className='inputContainer'>
-                                <input className={'input ' + (validPassword ? 'valid-input': 'invalid-input')} id='password' type='password' onInput={validator} placeholder='Password' />
-                                <label className='inputLabel' htmlFor='password'>Password</label>
-                            </div>
-                            <div className='inputContainer'>
-                                <input className={'input ' + (validConfirm ? 'valid-input': 'invalid-input')} id='confirm_password' type='password' onInput={validator} placeholder='Confirm Password' />
-                                <label className='inputLabel' htmlFor='confirm_password'>Confirm Password</label>
+                        <h1 className='h1'> Register today with </h1>
+                        <span className='spry_h1'>SPRY</span>
+
+                        <h3 className='h3r'>see what people think of you</h3>
+                        <div className='smallTxt'>
+                            <div className='regTxt'>
+                            <p>Create an account, Share your link with friends, Check the comments in your home, You'll never know who comments.</p>
                             </div>
                         </div>
                         <div className='btn-box'>
-                            <button className='btn'>Sign-up</button>
-                        </div>
-                    </form>
-                </div>
-                <div className='abouthalf'>
-
-                    <h1 className='h1'> Register today with </h1>
-                    <span className='spry_h1'>SPRY</span>
-
-                    <h3 className='h3r'>see what people think of you</h3>
-                    <div className='smallTxt'>
-                        <div className='regTxt'>
-                        <p>Create an account, Share your link with friends, Check the comments in your home, You'll never know who comments.</p>
+                            <a href = '#login' className='hollow'>login</a>
                         </div>
                     </div>
-                    <div className='btn-box'>
-                        <a href = '#login' className='hollow'>login</a>
-                    </div>
-                </div>
-            </section>      
-        </div>
-        
-        <Mobile/>
+                </section>      
+            </div>
+            <Mobile/>
         </>
     );
 }

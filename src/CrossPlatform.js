@@ -4,16 +4,16 @@ const CrossPlatform=()=>{
 
   return (
     <>
-        <h1 className='tc h1'>
+        <h1 className=' h1 tc mc slide-up'>
             {'What we have for '}
-            <span style={{color:'rgb(73 175 84)',fontSize:'5rem', fontWeight:'600'}}>
+            <span className = 'h1' style={{color:'rgb(73 175 84)', fontWeight:'600'}}>
             YOU
             </span>
             <hr className='hr'/> 
         </h1>
         <section className='aboutSect bw fit-height animated'>
-            <img src='cross platform.png' className='about_img'/>        
-            <div className='abouthalf'>
+            <img src='cross platform.png' className='about_img slide-left'/>        
+            <div className='abouthalf slide-right'>
                 <h1 className='h1'>Cross Platform Support</h1>
 
                 <h3 className='h3r'>Coming Soon</h3>

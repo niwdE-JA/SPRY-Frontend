@@ -73,7 +73,7 @@ const Post = ({loadAsync, setDialog})=> {
       
         <section className='mainSect bw'>
             <div className = 'row'>
-                <img src='posts.png' className='about_img'/> 
+                <img src='posts.png' className='halfsect'/> 
                 <div className='mainPart'>
                     <div className='conten'>
                         <h3 className='h3r post'>Post a comment</h3>

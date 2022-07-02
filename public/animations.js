@@ -1,14 +1,69 @@
-let left_slide = document.getElementsByClassName('slide-left')
-let right_slide = document.getElementsByClassName('slide-right')
-let fade_in = document.getElementsByClassName('fade-in')
+
+function leftSlide (){
+    let element = document.getElementsByClassName('slide-left')
+    let numArray = element.length
+
+    for( let i=0 ; i < numArray ; i++ ){
+        let bound = element[i].getBoundingClientRect()
+
+        if ( window.innerHeight - bound.top >= bound.height *(3/5) && bound.bottom <= (window.innerHeight) + ( element[i].offsetHeight)) {
+
+            element[i].style.animation = '.8s ease 0s 1 normal none running slide-left'
+            element[i].style.opacity = '1'
+        }
+    }
+}
+
+function rightSlide (){
+    let element = document.getElementsByClassName('slide-right')
+    let numArray = element.length
+
+    for( let i=0 ; i < numArray ; i++ ){
+        let bound = element[i].getBoundingClientRect()
+
+        if ( window.innerHeight - bound.top >= bound.height *(3/5) && bound.bottom <= (window.innerHeight) + ( element[i].offsetHeight)) {
+
+            element[i].style.animation = '.8s ease 0s 1 normal none running slide-right'
+            element[i].style.opacity = '1'
+        }
+    }
+}
+
+function fadeIn (){
+    let element = document.getElementsByClassName('fade-in')
+    let numArray = element.length
+
+    for( let i=0 ; i < numArray ; i++ ){
+        let bound = element[i].getBoundingClientRect()
+
+        if ( window.innerHeight - bound.top >= bound.height *(3/5) && bound.bottom <= (window.innerHeight) + (element[i].offsetHeight) ) {
+
+            element[i].style.animation = '1s ease 0s 1 normal none running fade-in'
+            element[i].style.opacity = '1'
+        }
+    }
+}
+
+function upSlide (){
+    let element = document.getElementsByClassName('slide-up')
+    let numArray = element.length
+
+    for( let i=0 ; i < numArray ; i++ ){
+        let bound = element[i].getBoundingClientRect()
+
+        if ( window.innerHeight - bound.top >= bound.height *(3/5) && bound.bottom <= (window.innerHeight) + ( element[i].offsetHeight)) {
+
+            element[i].style.animation = '1.5s ease 0s 1 normal none running slide-up'
+            element[i].style.opacity = '1'
+        }
+    }
+}
 
 function animationTrigger () {
-    let element = document.getElementsByClassName('animated')[1]
-    let bound = element.getBoundingClientRect()
-
-    if ( bound.top >= -element.offsetHeight && bound.bottom <= (window.innerHeight) + ( element.offsetHeight * (3/4) )) {
-        console.log('yessssss were in')
-    }
+    rightSlide()
+    leftSlide()
+    upSlide()
+    fadeIn()
 }
 
 

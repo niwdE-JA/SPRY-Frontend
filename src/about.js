@@ -6,38 +6,40 @@ import Ionicons from './Ionicons';
 const About= ()=> {
   return (
     <>
-    
-      <section className='aboutSect bw'>
-        <div className='abouthalf'>
+      <div className = 'bod'>
+        <section className='aboutSect bw'>
+          <div className='halfsect'>
 
-          <h1 className='h1'>Welcome to</h1>
-          <h1 className='spry_h1'>SPRY</h1>
+            <h1 className='h1'>Welcome to</h1>
+            <h1 className='spry_h1'>SPRY</h1>
 
-          <h3 className='h3r'>Developed by NXTHub</h3>
-          <div className='smallTxt'>
-            <div className='regTxt'>
-            <p><span style={{color:'rgb(73 175 84)',fontSize:'1.5rem',fontWeight:'800',textTransform:'uppercase'}}>spry</span> was devloped by Nxt_Hub. A web app soon to run on web3 using <span className='highlight bold'>React</span> and <span className='highlight bold'>node, express JS</span>. Create an account, Share your profile link and check your comments section, it is anonymous so you'll have no idea who comments</p>
+            <h3 className='h3r'>Developed by NXTHub</h3>
+            <div className='smallTxt'>
+              <div className='regTxt'>
+              <p><span style={{color:'rgb(73 175 84)',fontSize:'1.5rem',fontWeight:'800',textTransform:'uppercase'}}>spry</span> was devloped by Nxt_Hub. A web app soon to run on web3 using <span className='highlight bold'>React</span> and <span className='highlight bold'>node, express JS</span>. Create an account, Share your profile link and check your comments section, it is anonymous so you'll have no idea who comments</p>
+              </div>
+            </div>
+            <h3 className='h3r'>have fun</h3>
+            <div className='btns-box'>
+                <a href = '#signup' className='hollow'>Get Started</a>
+                <a href = '#login' className='btns'>I have an Account</a>
             </div>
           </div>
-          <h3 className='h3r'>have fun</h3>
-          <div className='btns-box'>
-              <a href = '#signup' className='hollow'>Get Started</a>
-              <a href = '#login' className='btns'>I have an Account</a>
-          </div>
-        </div>
-        <img src='projects.svg' className='about_img'/>
-      </section>
+          <img src='projects.svg' className='halfsect'/>
+        </section>        
+      </div>
+
       
       <section className='fockerSect'>
-        <h1 className='h1'>
+        <h1 className='h1 tc mc slide-up'>
           {'Meet the '}
           <span style={{color:'rgb(73 175 84)',fontSize:'5rem', fontWeight:'600'}}>
             Creators
           </span>
-          <hr className='hr'/> 
+          <hr className='hr slide-up'/> 
         </h1>
-        <h3 className = 'h3r'>Nxt_Hub Developers</h3>
-        <div className='fockers'>     
+        <h3 className = 'h3r slide-up'>Nxt_Hub Developers</h3>
+        <div className='fockers fade-in'>     
           <div className='focker_1'>
             <div className = 'bottom-right border'></div>            
             <div className = 'top-left border'></div>            

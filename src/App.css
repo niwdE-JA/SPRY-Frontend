@@ -8,7 +8,7 @@
     .mainPart {width: 70% !important;}
 }
 @media (max-width:1170px) {
-    .abouthalf {max-width: 70% !important;}
+    .abouthalf {width: 35rem !important;}
 }
 @media (max-width:1024px) {
     .mainPart {width: 75% !important;}
@@ -37,7 +37,7 @@
 }
 @media (max-width:570px) {
     .spry_h1 {font-size: 3rem !important;}
-    .h1, .dash {font-size: 4rem !important; display: none;}
+    .h1, .dash {font-size: 3.5rem !important;}
     .group{flex-direction: column !important;}
     .inputContainer {width: 100% !important;}
     .mainSect {width: 100% !important;}
