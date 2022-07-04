@@ -8,7 +8,7 @@
     .mainPart {width: 70% !important;}
 }
 @media (max-width:1170px) {
-    .abouthalf {width: 35rem !important;}
+    .abouthalf {width: 80% !important;}
 }
 @media (max-width:1024px) {
     .mainPart {width: 75% !important;}
@@ -27,8 +27,19 @@
     .abouthalf {margin: 2em !important;}
     .halfsect {margin: 2em !important;}
     .rplCont{margin: auto !important;}
+    .giant-icon {
+        height: 7rem !important;
+        width: 7rem !important;
+        margin-right: 1rem !important;
+        margin-left: 1rem !important;
+    }
+    .footContent {width: 100% !important;}
+    .no-list{width: 60% !important;}
+    .ml {width: 60% !important;}
+    .mid, .mid1{font-weight: 300 !important;}
 }
 @media (max-width:580px) {
+    .focker_1, .focker_2 {width: 100%;}
     .bod {width: 90% !important;}
     .halfsect{width: 100% !important;}
     .navContent{width:85vw !important;}
@@ -37,7 +48,8 @@
 }
 @media (max-width:570px) {
     .spry_h1 {font-size: 3rem !important;}
-    .h1, .dash {font-size: 3.5rem !important;}
+    .h1, .h1-alt {font-size: 3.5rem !important;}
+
     .group{flex-direction: column !important;}
     .inputContainer {width: 100% !important;}
     .mainSect {width: 100% !important;}

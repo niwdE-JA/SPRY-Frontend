@@ -12,6 +12,7 @@ const Mobile=()=>{
             <hr className='hr'/> 
         </h1>
         <section className='aboutSect bw fit-height'>
+            
             <div className='abouthalf slide-left'>
             <h1 className='h1'>Mobile Support</h1>
             <h1 className='spry_h1'>SPRY</h1>

@@ -35,17 +35,20 @@
     font-size: 5rem;
     font-weight: 400;
     color: #5a5a5a;
+    padding-bottom: 1rem;
 }
 .h1-alt{
     font-size: 5rem;
     font-weight: 600;
     color: #5a5a5a;
+    padding-bottom: 1rem;
 }
 .h3r{
     font-size: 2rem;
     color: #49af54;
     font-weight: 400;
     text-transform: capitalize;
+    padding-bottom: 1rem;
 }
 .halfsect{
     min-width: 10rem;
@@ -60,7 +63,6 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     color: #5e5e5e;
-    font-weight: 500;
 }
 .regTxt p{
     font-size: 1.2rem;

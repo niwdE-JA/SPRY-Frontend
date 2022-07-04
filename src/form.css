@@ -15,6 +15,7 @@
 }
 .log-in{
     width: 25rem;
+    max-width: -webkit-fill-available;
     margin: auto;
 }
 

@@ -20,6 +20,8 @@ import React from 'react'
 //call 'getComments' everytime an action(w/ event listeners) is performed on home. Use this to replace problematic setInterval
 
 class App extends React.Component {
+  server = 'https://spry-anonymous.herokuapp.com/';
+  
   constructor(){
     super()
     this.state = {
@@ -33,11 +35,12 @@ class App extends React.Component {
       error: false,
       dialog_display: false,
       message : 'Dialog message goes here',
-      description: 'Details of the message'
+      description: 'Details of the message',
     }
 
     window.addEventListener('hashchange', this.router ) ;
   }
+
 
   setDialog = (message, description ) => {
     this.setState({ message, description, dialog_display: true } );
@@ -124,8 +127,7 @@ class App extends React.Component {
   }
 
   getHashRoute = () => {
-    let hash = window.location.href.split('?')[0]; // separates query params
-    hash = hash.split('#')[1]; // separates hash
+    let hash = window.location.href.split('#')[1]; // separates hash
     return hash;
   }
 
@@ -185,7 +187,7 @@ class App extends React.Component {
     this.setState({loggedin: false, user: '', fullname: ['',''], getdata: [] });
 
     //send logout request asynchronously
-    fetch('http://localhost:8080/logout' ,
+    fetch(this.server + 'logout' ,
     {
         method: 'GET',
         credentials: 'include',
@@ -214,7 +216,7 @@ class App extends React.Component {
 
     let res, data;
     try{
-      res = await fetch('http://localhost:8080/signin',
+      res = await fetch(this.server + 'signin',
       {
         method: 'POST',
         credentials: 'include',
@@ -282,7 +284,7 @@ class App extends React.Component {
 
     let res, data;
 
-    res = await fetch('http://localhost:8080/register',
+    res = await fetch(this.server + 'register',
     {
       method: 'POST',
       credentials: 'include',
@@ -362,6 +364,7 @@ class App extends React.Component {
           />
           :(this.state.route === 'home')?
           <Home
+           server = {this.server}
            routeChange={this.routeChange}
            loadAsync = {this.loadAsync}
            getdata= {this.state.getdata}
@@ -378,6 +381,7 @@ class App extends React.Component {
 
           :(this.state.route === 'post')?
           <Post
+           server = {this.server}
            loadAsync = {this.loadAsync}
            setDialog= {this.setDialog}
           />

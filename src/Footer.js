@@ -34,7 +34,7 @@ const Footer=({route, loggedin, prompter})=> {
         </div>
         <div className='foot'>
             <div className='footContent'>
-                <h3 className='ml' onClick = { prompter } >Copyright Next_Hub 2022</h3>
+                <h3 className='ml tc' onClick = { prompter } >Copyright Next_Hub 2022</h3>
                 <ul className='no-list'>
                     <li><a href=""><Ionicons className='small_medium-icon' name='IoLogoFacebook'/></a></li>
                     <li><a href=""><Ionicons className='small_medium-icon' name='IoLogoInstagram'/></a></li>

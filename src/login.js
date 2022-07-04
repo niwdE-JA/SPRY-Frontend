@@ -27,7 +27,7 @@ const Login=({loadAsync, login, } )=> {
         }else{
             setValidEmail(true);
         }
-        if(password.value.length < 8 || password.value.length > 12 ){
+        if(password.value.length === 0 ){
             setValidPassword(false);
         }else{
             setValidPassword(true);
@@ -37,8 +37,8 @@ const Login=({loadAsync, login, } )=> {
         if(! email.checkValidity() || email.value === '' ){
             setMessage("Please input a valid Email.");
             setVisibility(true);
-        }else if(password.value.length < 8 || password.value.length > 12 ){
-            setMessage('Password must be 8--12');
+        }else if(password.value.length === 0 ){
+            setMessage('Please input a valid Password.');
             setVisibility(true);
         }else{
             setVisibility(false);

@@ -6,7 +6,7 @@ import { FaArrowCircleRight } from 'react-icons/fa';
 import { IoRefreshCircle } from 'react-icons/io5';
 // import { useEffect } from 'react/cjs/react.production.min';
 
-const Home = ({ getdata, inputField, user, fullname, setFullname, routeChange, setData, loadAsync, setDialog })=> {
+const Home = ({ server, getdata, inputField, user, fullname, setFullname, routeChange, setData, loadAsync, setDialog })=> {
   
   const filtered= getdata.filter(comment=>{
     return comment.alias.toLowerCase().includes(inputField.toLowerCase()) || comment.message.toLowerCase().includes(inputField.toLowerCase())
@@ -45,7 +45,7 @@ const Home = ({ getdata, inputField, user, fullname, setFullname, routeChange, s
 
     
     try{
-      res = await fetch('http://localhost:8080/home/' + user ,
+      res = await fetch(server + 'home/' + user ,
           {
             method: 'GET',
             credentials: 'include',
@@ -105,7 +105,7 @@ const Home = ({ getdata, inputField, user, fullname, setFullname, routeChange, s
   const getUser = async (userid)=>{
     let res, user_data;
     try{
-      res = await fetch('http://localhost:8080/user/' + userid ,
+      res = await fetch(server + 'user/' + userid ,
         {
           method: 'GET',
           credentials: 'include',
@@ -163,7 +163,7 @@ const Home = ({ getdata, inputField, user, fullname, setFullname, routeChange, s
                 <div className='shrbx'>
                   <button className='btn' onClick = {()=>{
                     // generate link with username as query params
-                    let share_link = window.location.origin + '/#post?user=' + user ;
+                    let share_link = window.location.origin + '?user=' + user +  + '#post' ;
                     //call share link intent or use copy-to-clipboard to store string
                     copyText(share_link);
                     setDialog('Copied to clipboard','You can now share your link with your friends!');

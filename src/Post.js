@@ -3,7 +3,7 @@ import Ionicons from './Ionicons'
 import './Main.css'
 import './post.css'
 
-const Post = ({loadAsync, setDialog})=> { 
+const Post = ({server, loadAsync, setDialog})=> { 
 
     const reply = async ()=>{
         
@@ -19,7 +19,7 @@ const Post = ({loadAsync, setDialog})=> {
 
         let res, data;
         try{ 
-            res = await fetch('http://localhost:8080/answer' ,
+            res = await fetch(server + 'answer' ,
             {
                 method: 'POST',
                 credentials: 'include',
