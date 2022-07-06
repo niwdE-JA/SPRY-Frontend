@@ -12,18 +12,23 @@ class Navigation extends React.Component {
         super()
         this.state={
             tgglState:'tgglist',
-            // getRoute: getRoute,
+            top: '',
+            center : '',
+            bottom : ''
         }
 
     }
 
 
-    drop=()=>{
-        this.setState({tgglState:'tgglist display'})
+    toggle=()=>{
+        if ( this.state.tgglState == 'tgglist' ){
+            this.setState({tgglState:'tgglist display', top:'top', center: 'center', bottom: 'bottom'})
+        }
+        else{
+            this.setState({tgglState:'tgglist', top:'', center: '', bottom: ''})
+        }      
     }
-    undrop=()=>{
-        this.setState({tgglState:'tgglist'})
-    }
+    
 
     render(){
         return (
@@ -40,12 +45,28 @@ class Navigation extends React.Component {
                         </h3>
                     </div>
                     <div className='listHolder'>
-                        <div className='toggle' onMouseEnter={this.drop} onMouseLeave={this.undrop}>
-                            <p className='toggler'>...</p>
+                        <div className='toggle'>
+                            <div>
+                                {
+                                (this.props.route === 'home'  )?
+                                <div >
+                                    <input className='search-alt' placeholder='Search comments...' maxLength='15' onChange={this.props.searChange} />
+                                    <button className='click-alt' onClick={()=>{console.log("Fire, baby.")}}><Ionicons className='small_medium-icon center-icon' name='IoSearch' /></button>
+                                </div>
+                                :<></>
+                                }
+                            </div>                            
+                            <div className='toggler' onClick={this.toggle}>
+                                <div class={`slim ${ this.state.top }`}></div>
+                                <div class={`slim cent ${ this.state.center }`}></div>
+                                <div class={`slim ${ this.state.bottom }`}></div>
+                            </div>
+
                             <ul className={this.state.tgglState}>
                                 <Navitems 
                                     route = {this.props.route}
                                     loggedin = {this.props.loggedin}
+                                    toggle = {this.toggle}
                                     toggled = 'toggled'
                                 />
                             </ul>
@@ -66,6 +87,7 @@ class Navigation extends React.Component {
                             }
                         </ul>
                     </div>
+                    
                 </div>
             </nav>
           );

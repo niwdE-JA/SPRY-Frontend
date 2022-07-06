@@ -1,8 +1,8 @@
 .aboutSect{
     min-height: 90vh;
-    width: 80%;
+    width: 90%;
     justify-content: center;
-    margin: auto;
+    margin: 1rem auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -17,7 +17,7 @@
     height: -webkit-fit-content;
     height: fit-content;
 
-    width: 80%;
+    width: 90%;
     justify-content: center;
     margin: auto;
     display: flex;
@@ -55,10 +55,10 @@
     transition: all .3s;
 }
 
-.focker_1:hover .top-left, .focker_2:hover .top-left{
+.focker_1:hover .top-left, .focker_2:hover .top-left, .focker_1:active .top-left, .focker_2:active .top-left{
     transform: translate(-18.5%, -19%);
 }
-.focker_1:hover .bottom-right, .focker_2:hover .bottom-right{
+.focker_1:hover .bottom-right, .focker_2:hover .bottom-right, .focker_1:active .bottom-right, .focker_2:active .bottom-right{
     transform: translate(13px, 13px)
 }
 .inner{
@@ -82,7 +82,7 @@
 }
 .h3a{
     font-size: 1.3rem;
-    color: #49af54;
+    color: #1f7c49;
     border-radius: 3px;
     font-weight: 600;
     padding: .4rem 1rem;
@@ -90,8 +90,8 @@
     text-transform: uppercase;
 }
 .spry_h1{
-    color: rgb(73, 175, 84);
-    font-size: 5rem;
+    color: #1f7c49;
+    font-size: 3.5rem;
     font-weight: 700;
     padding-bottom: 1rem;
 }
@@ -114,6 +114,9 @@
     width:10rem;
     margin:1rem;
 }
+.m1{
+ margin: 1rem;
+}
 .mg2 ul{
     font-size: 1.2rem;
 }
@@ -133,20 +136,21 @@
     background-position: center;
     transition: all .3s;
 }
-.image-box:hover{
+.image-box:hover, .image-box:active{
     background-size: 115%;
 }
+
 .focker-1{
     background-image: linear-gradient(40deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(./assets/focker_1.jpg);
 }
-.focker-1:hover{
+.focker-1:hover, .focker-1:active{
     background-image: linear-gradient(40deg, rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url(./assets/focker_1.jpg);
 }
 .focker-2{
     background-image: linear-gradient(40deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(./assets/focker_2.jpg);
     animation-delay: .5s;
 }
-.focker-2:hover{
+.focker-2:hover, .focker-2:active{
     background-image: linear-gradient(40deg, rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url(./assets/focker_2.jpg);
 }
 
@@ -166,13 +170,13 @@
     opacity: 0;
     transition: all .3s;
 }
-.icon-container:hover{
+.icon-container:hover, .icon-container:active{
     border: 1.5px solid rgba(255, 255, 255, 0.8);
 }
-.icon-container:hover a{
+.icon-container:hover a, .icon-container:active a{
     color: rgba(255, 255, 255, 0.8);
 }
-.image-box:hover .icon{
+.image-box:hover .icon, .image-box:active .icon{
     opacity: 1;
 }
 .icon-container a{

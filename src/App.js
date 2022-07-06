@@ -19,8 +19,12 @@ import React from 'react'
 
 //call 'getComments' everytime an action(w/ event listeners) is performed on home. Use this to replace problematic setInterval
 
+
 class App extends React.Component {
-  server = 'https://spry-anonymous.herokuapp.com/';
+  server = 
+  (window.location.origin === 'https://spry-anonymous.herokuapp.com')?
+  'https://spry-anonymous.herokuapp.com/' : 
+  'http://localhost:8080/';
   
   constructor(){
     super()
@@ -245,8 +249,8 @@ class App extends React.Component {
           this.routeChange('home');
 
         }else if(data.status === 401){
-            console.log('login failed due to auth reasons');
-            logError('login failed due to auth reasons');
+            console.log('Invalid username or password');
+            logError('Invalid username or password');
             this.routeChange('login'); //To handle signup case where 'login' is called from 'signup'. This is a no-op is route is already on 'login' 
             
         }else{
@@ -343,72 +347,76 @@ class App extends React.Component {
   render(){
       return (
         <>
-          <Navigation 
-            route= {this.state.route} 
-            loggedin= {this.state.loggedin}
-            searChange={this.searChange} />
-
-          {
-          (this.state.loading )?
-          <Main/>
-          :<></>
-          }
-        
-          {
-          (this.state.error)?
-          <Error />
-          :(this.state.route === 'login')?
-          <Login
-            login = {this.login}
-            loadAsync = {this.loadAsync}
-          />
-          :(this.state.route === 'home')?
-          <Home
-           server = {this.server}
-           routeChange={this.routeChange}
-           loadAsync = {this.loadAsync}
-           getdata= {this.state.getdata}
-           setData= {this.setData}
-           user= {this.state.user}
-           fullname= {this.state.fullname}
-           setFullname= {this.setFullname}
-           inputField={this.state.inputField}
-           setDialog= {this.setDialog}
-           />
-
-          :(this.state.route === 'about')?
-          <About />
-
-          :(this.state.route === 'post')?
-          <Post
-           server = {this.server}
-           loadAsync = {this.loadAsync}
-           setDialog= {this.setDialog}
-          />
-
-          :(this.state.route === 'signup')?
-          <Signup
-          signup = {this.signup}
-          loadAsync = {this.loadAsync}
-          />
-          :<Main/>
-
-          }
+          <>
+            <Navigation 
+              route= {this.state.route} 
+              loggedin= {this.state.loggedin}
+              searChange={this.searChange} />
           
-          <Footer
-            route= {this.state.route} 
-            loggedin= {this.state.loggedin}
-          />
+            {
+            (this.state.error)?
+            <Error />
+            :(this.state.route === 'login')?
+            <Login
+              login = {this.login}
+              loadAsync = {this.loadAsync}
+            />
+            :(this.state.route === 'home')?
+            <Home
+            server = {this.server}
+            routeChange={this.routeChange}
+            loadAsync = {this.loadAsync}
+            getdata= {this.state.getdata}
+            setData= {this.setData}
+            user= {this.state.user}
+            fullname= {this.state.fullname}
+            setFullname= {this.setFullname}
+            inputField={this.state.inputField}
+            setDialog= {this.setDialog}
+            />
+
+            :(this.state.route === 'about')?
+            <About />
+
+            :(this.state.route === 'post')?
+            <Post
+            server = {this.server}
+            loadAsync = {this.loadAsync}
+            setDialog= {this.setDialog}
+            />
+
+            :(this.state.route === 'signup')?
+            <Signup
+            signup = {this.signup}
+            loadAsync = {this.loadAsync}
+            />
+            :<Main/>
+
+            }
+            
+            <Footer
+              route= {this.state.route} 
+              loggedin= {this.state.loggedin}
+            />
+            {
+            (this.state.dialog)?
+            <Dialog
+              unprompter = {this.prompt_down}
+              message = {this.state.message}
+              description = {this.state.description}
+            />
+            :<></>
+            }
+
+          </>  
           {
-          (this.state.dialog_display)?
-          <Dialog
-            unprompter = {this.prompt_down}
-            message = {this.state.message}
-            description = {this.state.description}
-          />
-          :<></>
-          }
+            (this.state.loading)?
+            <Main/>
+            :<></>
+          }                
         </>
+
+
       );
     }
 

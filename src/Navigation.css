@@ -1,11 +1,14 @@
 .navbar{
     background-color: #1f7c49;
     color: white;
-    height: 3.5rem;
+    width: 100%;
+    top: 0%;
+    min-height: 3.5rem;
     text-transform: uppercase;
     padding-top: .7rem;
     padding-bottom: .7rem;
     transition: all .3s;
+    z-index: 100;
 }
 .box{
     width: 3rem;
@@ -41,20 +44,20 @@
 .listHolder{
     width:fit-content;
     margin-top: auto;
+    min-width: 30%;
     margin-bottom: auto;
     display: flex;
 }
 .toggle{
     letter-spacing: 4px;
     font-size: 2rem;
+    width: 100%;
     font-weight: 900;
     cursor: pointer;
-    padding-inline-start: 1rem;
-    padding-inline-end: 1rem;
     position: relative;
     margin-left: auto;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 50%;
     transition: all .3s;
     display: none;
@@ -68,15 +71,18 @@
     margin-left: 3px;
     display: none;
 }
+
+
 .tgglist{
     background-color: white;
     position: absolute;
     list-style: none;
     color: #1f7c49;
     min-width: max-content;
-    padding: 0.5rem 1rem;
-    top: 1.5rem;
-    right: 35%;
+    padding: 1rem;
+    border-radius: 1rem;
+    top: 3rem;
+    right: 5%;
     text-transform: capitalize;
     box-shadow: -0.2px 0.2px 5px #201e1e;
     font-weight: 400;
@@ -90,13 +96,13 @@
 .tgglist li{
     background-color: white;
     width: 100%;
-    padding-inline-start: 2.2rem;
-    padding-inline-end: 2.2rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
     display: flex;
 }
-.tgglist li:hover{
+.tgglist li:hover, .tgglist li:active{
     background-color: #efefef;
 }
 
@@ -161,7 +167,7 @@
 
 .search, .search:focus-visible{
     outline: 0px;
-    color: #49af54;
+    color: #1f7c49;
     background-color: rgb(248 248 248);
     border: 2px solid rgba(248 248 248);
     height: 2.5rem;
@@ -170,7 +176,7 @@
     text-align: start;
 }
 .search::placeholder{
-    color: #49af54;
+    color: #1f7c49;
     font-size: .8rem;
     font-weight: 600;
 }
@@ -182,38 +188,109 @@
     height: 2.5rem;
     padding-inline-start: 5px;
     padding-inline-end: 5px;
-    border: 2px solid #f8f8f8;
-    color: #49af54;
+    border: 2px solid #f8f8f8;;
+    color: #1f7c49;
     font-weight: bolder;
     transition: all .3s;
 }
-.click:hover{
+.search-alt, .search-alt:focus-visible{
+    outline: 0px;
+    color: #1f7c49;
+    background-color: rgb(248 248 248);
+
+    border-top: 1.8px solid #2194ff;
+    border-left: 1.8px solid #2194ff;
+    border-bottom: 1.8px solid #2194ff;
+    border-right: 0px;
+
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    height: 2.5rem;
+    padding-inline-start: 15px;
+    width: 9rem;
+    text-align: start;
+}
+.search-alt::placeholder{
+    color: #1f7c49;
+    font-size: .8rem;
+    font-weight: 600;
+}
+.click-alt {
+    background-color: #f8f8f8;
+    height: 100%;
+    position: absolute;
+    padding-inline-start: 5px;
+    padding-inline-end: 5px;
+
+    border-top: 1.8px solid #2194ff;
+    border-right: 1.8px solid #2194ff;
+    border-bottom: 1.8px solid #2194ff;
+
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    border-left: 0px;
+    color: #1f7c49;
+    font-weight: bolder;
+    transition: all .3s;
+}
+.click:hover, .click:active{
     background-color: rgba(255, 255, 255, 0.8);
     border-color: rgba(255, 255, 255, 0.8);
 }
 .highlight{
-    background-color: rgb(217 225 70/ 42%);
+    width: -moz-fit-content;
     width: fit-content;
+    font-size: 1.5rem;
     margin: auto;
+    text-transform: capitalize;
     padding-inline-start: 0.1rem;
     padding-inline-end: 0.1rem;
-    color: rgb(23 157 0);
+    color: #1f7c49;
     font-weight: 700;
 }
-.bold{
-    padding: 0.2rem;
-    padding-inline-start: 0.6rem;
-    padding-inline-end: 0.6rem;
-    border-radius: 2px;
+.highlight-alt{
+    background-color: rgba(127, 255, 212, 0.507);
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 1rem;
+    margin: auto;
+    text-transform: capitalize;
+    color: #1f7c49;
 }
 
+
 .flat{
-    width: 0.6rem;
+    width: 0.45rem;
     height: 1rem;
     background-color: white;
+    border-radius: 5px;
 }
 .middle{
     height: 1.7rem;
+}
+.slim{
+    width: 2.2rem;
+    height: 0.24rem;
+    border-radius: 50px;
+    margin: .25rem;
+    background-color: #1f7c49;
+    transition: all .4s;
+}
+.cent{
+    width: 1.3rem;
+    margin-left: auto;
+}
+.top{
+    transform: matrix(.8, .7, -.7, .8, 0, 4);
+
+}
+.center{
+    display: none;
+}
+.bottom{
+    transform: matrix(.8, -0.7, 0.7, .8, 0, -4);
 }
 
 ion-icon{

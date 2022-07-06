@@ -6,9 +6,10 @@
     height: -webkit-fit-content;
     height: fit-content;
 
-    border-left: 4px solid #01df65;
+    border-left: 4px solid #1f7c49;
     box-shadow: -0.1px 0.1px 0.3rem rgb(0 0 0);
     padding-bottom: 3rem;
+    margin-top: 2.5rem !important;
     padding-top: 1rem;
     padding-inline-start: 1.5rem;    
     padding-inline-end:1.5rem;
@@ -29,7 +30,7 @@
 .h3{
     font-size: 2rem;
     font-weight: 400;
-    color: #0ac55e;
+    color: #1f7c49;
     text-transform: uppercase;
     margin-bottom: 0;
 }
@@ -40,7 +41,7 @@
     font-size: 1rem;
     padding: 1rem 1rem;   
     border-color: transparent;
-    border-left:3.5px solid #01df65;
+    border-left:3.5px solid #1f7c49;
     transition: all .2s;
 }
 .valid-input {
@@ -65,7 +66,7 @@
 .inputLabel{
     text-align: left;
     width: 100%;
-    color: #01df65;
+    color: #1f7c49;
     font-size: 1.1rem;
     font-weight: 500;
     opacity: 1;
@@ -96,7 +97,7 @@
     font-weight: 500;
     cursor: pointer;
     margin-right: 1rem;
-    background-color: #49af54;
+    background-color: #1f7c49;
     color: white;
     border: 0px;
     padding-inline-start: 2rem;
@@ -106,7 +107,7 @@
     border-radius: 5px;
     transition: all .3s;
 }
-.btn:hover {
+.btn:hover, .btn:active{
     background-color: rgb(15, 104, 55);
 }
 .hollow, .hollow:active, .hollow:visited{
@@ -114,9 +115,9 @@
     font-weight: 700;
     cursor: pointer;
     text-decoration: none;
-    background-color: #49af5300;
-    color: #49af54;
-    border: 2px solid #49af54;
+    background-color: #1f7c4900;
+    color: #1f7c49;
+    border: 2px solid #1f7c49;
     padding-inline-start: 2rem;
     padding-inline-end: 2rem;   
     padding-top: 0.7rem;
@@ -127,7 +128,7 @@
     margin-top: 1rem;
 }
 
-.hollow:hover{
+.hollow:hover, .hollow:active{
     border: 2px solid #3c8844;
     color: #2d5e32;
     transform: scale(1.03);
@@ -138,9 +139,9 @@
     font-weight: 700;
     cursor: pointer;
     text-decoration: none;
-    background-color: #49af53;
+    background-color: #1f7c49;
     color: white;
-    border: 2px solid #49af54;
+    border: 2px solid #1f7c49;
     padding-inline-start: 2rem;
     padding-inline-end: 2rem;   
     padding-top: 0.7rem;
@@ -151,18 +152,18 @@
     margin-top: 1rem;
 }
 
-.btns:hover{
+.btns:hover, .btns:active{
     background-color: #295c2e;
     border: 2px solid #295c2e;
     transform: scale(1.03);
 }
 
 .ahref{
-    color: #49af54;
+    color: #1f7c49;
     text-align: start;
     transition: all .2s;
 }
-.ahref:hover{
+.ahref:hover, .ahref:active{
     color: #307337;
 }
 .red{
@@ -188,7 +189,7 @@
     border-radius: 2px;
 }
 .green{
-    color: #0ac55e;
+    color: #1f7c49;
     display: flex;
 }
 .sp{

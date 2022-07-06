@@ -10,13 +10,13 @@ const About= ()=> {
         <section className='aboutSect bw'>
           <div className='halfsect'>
 
-            <h1 className='h1'>Welcome to</h1>
-            <h1 className='spry_h1'>SPRY</h1>
+            <h1 className='h1'>Welcome to <span className='spry_h1'>SPRY</span></h1>
+            
 
             <h3 className='h3r'>Developed by NXTHub</h3>
             <div className='smallTxt'>
               <div className='regTxt'>
-              <p><span style={{color:'rgb(73 175 84)',fontSize:'1.5rem',fontWeight:'800',textTransform:'uppercase'}}>spry</span> was devloped by Nxt_Hub. A web app soon to run on web3 using <span className='highlight bold'>React</span> and <span className='highlight bold'>node, express JS</span>. Create an account, Share your profile link and check your comments section, it is anonymous so you'll have no idea who comments</p>
+              <p><span style={{color:'#1f7c49',fontSize:'1.5rem',fontWeight:'800',textTransform:'uppercase'}}>spry</span> was devloped by Nxt_Hub. A web app soon to run on web3 using <span className='highlight bold'>React</span> and <span className='highlight bold'>node, express JS</span>. Create an account, Share your profile link and check your comments section, it is anonymous so you'll have no idea who comments</p>
               </div>
             </div>
             <h3 className='h3r'>have fun</h3>
@@ -25,7 +25,7 @@ const About= ()=> {
                 <a href = '#login' className='btns'>I have an Account</a>
             </div>
           </div>
-          <img src='projects.svg' className='halfsect'/>
+          <img src='projects.svg' className='about_img'/>
         </section>        
       </div>
 
@@ -33,7 +33,7 @@ const About= ()=> {
       <section className='fockerSect'>
         <h1 className='h1 tc mc slide-up'>
           {'Meet the '}
-          <span style={{color:'rgb(73 175 84)',fontSize:'5rem', fontWeight:'600'}}>
+          <span style={{color:'#1f7c49',fontSize:'5rem', fontWeight:'600'}}>
             Creators
           </span>
           <hr className='hr slide-up'/> 
@@ -46,7 +46,7 @@ const About= ()=> {
             <div className='inner'>
               <div className='mg2'>
                 <ul className='tc'>
-                  <span style={{color:'rgb(73 175 84)',fontSize:'1.5rem',fontWeight:'800',textTransform:'uppercase'}}>
+                  <span style={{color:'#1f7c49',fontSize:'1.5rem',fontWeight:'800',textTransform:'uppercase'}}>
                   Roles<br/>
                   </span>
                   Frontend Using:<br/>
@@ -80,7 +80,7 @@ const About= ()=> {
             <div className='inner'>
             <div className='mg2'>
                 <ul className='tc'>
-                  <span style={{color:'rgb(73 175 84)',fontSize:'1.5rem',fontWeight:'800',textTransform:'uppercase'}}>
+                  <span style={{color:'#1f7c49',fontSize:'1.5rem',fontWeight:'800',textTransform:'uppercase'}}>
                   Roles<br/>
                   </span>
                   Frontend Using:<br/>

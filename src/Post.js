@@ -73,21 +73,23 @@ const Post = ({server, loadAsync, setDialog})=> {
       
         <section className='mainSect bw'>
             <div className = 'row'>
-                <img src='posts.png' className='halfsect'/> 
+                <img src='posts.png' className='about_img'/> 
                 <div className='mainPart'>
                     <div className='conten'>
-                        <h3 className='h3r post'>Post a comment</h3>
-                        <h3 className = 'lower'>let them know what you think</h3>
+                        <h3 className='spry_h1'>Post a comment</h3>
+                        <h3 className = 'h3r'>let them know what you think</h3>
                         <div className='card'>
-                            <div className='initCont'>
-                                <div className='img'>
-                                    <img src = 'image-neutral.jpg' style = {{ height: '5rem', width: '5rem' }}/>
+                            <div className='marg'>
+                                <div className='initCont'>
+                                    <div className='img'>
+                                        <img src = 'image-neutral.jpg' style = {{ height: '5rem', width: '5rem' }}/>
+                                    </div>
+                                    <h2>{getParameterByName('user')}</h2>
                                 </div>
-                                <h2>{getParameterByName('user')}</h2>
-                                <div className='edit-bt'></div>
+                                <h3> What do you think of me? <br/> Say something about me</h3>                  
                             </div>
-                            <h3>What do you think about me? I'll never know it's you</h3>
                         </div>
+
                         <div className='cnt'>
                             <div className='txtbox'>
                                 <textarea id='reply-message' type='text' placeholder='Message' className='inp'/>
@@ -101,7 +103,7 @@ const Post = ({server, loadAsync, setDialog})=> {
                 </div>                
             </div>
 
-        </section>
+        </section> 
 
       </>
     

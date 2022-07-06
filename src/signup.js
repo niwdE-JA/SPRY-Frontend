@@ -162,8 +162,7 @@ const signupHandler = (e)=>{
                     </div>
                     <div className='halfsect'>
 
-                        <h1 className='h1'> Register today with </h1>
-                        <span className='spry_h1'>SPRY</span>
+                        <h1 className='h1'> Register today with <span className='spry_h1'>SPRY</span></h1>
 
                         <h3 className='h3r'>see what people think of you</h3>
                         <div className='smallTxt'>

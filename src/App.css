@@ -15,14 +15,30 @@
 }
 @media (max-width:890px) {
     *{text-align: left;}
+    .card h3 {
+        padding: 0 !important;
+    }
     .fockers {width: 100% !important;}
     .login {width: 100% !important;}
     .regTxt{margin: 0% !important;}
     .card h3{width:fit-content}
     .list{display: none !important;}
     .toggler {display: flex !important;}
-    .scroll {height: auto !important; overflow-y: unset !important;}
-    .toggle{display:initial !important}
+    .scroll {
+        height: auto !important; 
+        overflow-y: unset !important; 
+        width: 100% !important; 
+        margin: 0rem !important;
+    }
+    .rplCont {
+        width: 90% !important;
+    }
+    .shrbx {
+        width: 100% !important;
+    }
+
+    .toggle{display:flex !important}
+    .listHolder {min-width: 50% !important;}
     .mainPart {width: 100% !important;}
     .abouthalf {margin: 2em !important;}
     .halfsect {margin: 2em !important;}
@@ -33,28 +49,63 @@
         margin-right: 1rem !important;
         margin-left: 1rem !important;
     }
+    .form{
+        background-color: rgba(233, 233, 233, 0) !important;
+        box-shadow: 0px 0px 0px !important;
+        border-left: 2px solid #1f7c49 !important;
+    }
+    .form:hover, .form:active{
+        box-shadow: -0.1px 0.1px 0.3rem rgb(0 0 0) !important;
+    }
+    .cnt {
+        width: 95% !important;
+    }
+    .conten {
+        width: 90% !important;
+    }
+    .flat{
+        background-color: #1f7c49 !important;
+    }
+    .navbar {
+        background-color: #f7f7f7 !important;
+        color: #1f7c49 !important;
+        box-shadow: 0.1px 0.1px 3px grey !important;
+    }
+    .title {
+        color: #1f7c49 !important;
+    }
+
     .footContent {width: 100% !important;}
     .no-list{width: 60% !important;}
     .ml {width: 60% !important;}
     .mid, .mid1{font-weight: 300 !important;}
+    .inputContainer {width: 100% !important;}
+
 }
 @media (max-width:580px) {
-    .focker_1, .focker_2 {width: 100%;}
-    .bod {width: 90% !important;}
-    .halfsect{width: 100% !important;}
+.load {width: 70% !important;}
+    .focker_1, .focker_2 {width: 100% !important;}
+    .listHolder {min-width: 65% !important;}
+    .bod {width: 90% !important; min-height: fit-content !important; display: inherit !important;}
+    .halfsect{width: 100% !important; margin: 0rem !important;}
+    .abouthalf{width: 100% !important; margin: 0rem !important;}
+    .m1{margin: 1.5rem !important;}
+
     .navContent{width:85vw !important;}
     .toggle{padding-inline-start: 0rem !important; padding-inline-end: 0rem !important;}
     .vrn{display: none !important;}
-}
-@media (max-width:570px) {
-    .spry_h1 {font-size: 3rem !important;}
-    .h1, .h1-alt {font-size: 3.5rem !important;}
+    .spry_h1 {font-size: 2rem !important;  }
+    .h1, .h1-alt {font-size: 2.5rem !important; padding: 0 !important;  font-weight: 500 !important; margin: 1rem 0rem !important}
+    .h3r{display: none !important;}
+    .regTxt p{font-size: 1.5rem !important;}
+    .log-in{width: -webkit-fill-available !important; }
+    .login{min-height: 73vh !important; }
 
     .group{flex-direction: column !important;}
-    .inputContainer {width: 100% !important;}
     .mainSect {width: 100% !important;}
-    .aboutSect {width: 100% !important;}
+    .aboutSect {width: 100% !important;}    
 }
+
 @media (max-width:450px) {
     *{font-size: 14px;}
     .inner{flex-wrap: wrap-reverse !important; margin-top: 1rem; margin-bottom: 1rem;}

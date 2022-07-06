@@ -149,35 +149,38 @@ const Home = ({ server, getdata, inputField, user, fullname, setFullname, routeC
           <img src='homer.png' className='about_img auto-bottom'/>
           <div className='mainPart'>
             <div className='conten'>
-              <h3 className='h3r post'>Check out your Comments</h3>
-              <h3 className = 'lower'>See what people have been saying about you.</h3>
+              <h3 className='spry_h1'>Check out your Comments</h3>
+              <h3 className = 'h3r'>See what people have been saying about you.</h3>
               <div className='card'>
-                <div className='initCont'>
-                  <div className='img'>
-                      <img src = 'image-neutral.jpg' style = {{ height: '5rem', width: '5rem' }}/>
+                <div className='marg'>
+                  <div className='initCont'>
+                    <div className='img'>
+                        <img src = 'image-neutral.jpg' style = {{ height: '5rem', width: '5rem' }}/>
+                    </div>
+                    <h2>{fullname[0] + ' ' + fullname[1]}</h2>
+                    <div className='edit-bt'></div>
                   </div>
-                  <h2>{fullname[0] + ' ' + fullname[1]}</h2>
-                  <div className='edit-bt'></div>
+                  <h3>What do you think of me? <br/> Say something about me</h3>
+                  <div className='shrbx'>
+                    <button className='btn' onClick = {()=>{
+                      // generate link with username as query params
+                      let share_link = window.location.origin + '?user=' + user + '#post' ;
+                      //call share link intent or use copy-to-clipboard to store string
+                      copyText(share_link);
+                      setDialog('Copied to clipboard','You can now share your link with your friends!');
+                    }} >Share link <FaShare className='small-icon center-icon'/></button>
+                    <button className = 'btn'
+                      onClick={()=>{
+                        loadAsync(
+                          async ()=>{
+                              await getComments(user, setData, routeChange,);
+                          },
+                          1000
+                        );
+                      } }>Reload<IoRefreshCircle className='small-icon center-icon'/></button>
+                  </div>                  
                 </div>
-                <h3>What do you think of me?</h3>
-                <div className='shrbx'>
-                  <button className='btn' onClick = {()=>{
-                    // generate link with username as query params
-                    let share_link = window.location.origin + '?user=' + user +  + '#post' ;
-                    //call share link intent or use copy-to-clipboard to store string
-                    copyText(share_link);
-                    setDialog('Copied to clipboard','You can now share your link with your friends!');
-                  }} >Share link <FaShare className='small-icon center-icon'/></button>
-                  <button className = 'btn'
-                    onClick={()=>{
-                      loadAsync(
-                        async ()=>{
-                            await getComments(user, setData, routeChange,);
-                        },
-                        1000
-                      );
-                    } }>Reload<IoRefreshCircle className='small-icon center-icon'/></button>
-                </div>
+
               </div>
             </div>
             <div className = 'scroll'>

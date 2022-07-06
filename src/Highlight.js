@@ -18,7 +18,7 @@ const Highlight=({message, value})=>{
                   <span>{ split_message[i]}</span>
                   {
                   (i !== (split_message.length - 1) )?
-                  <span className="highlight">{ value}</span>
+                  <span className="highlight-alt">{ value}</span>
                   :<></>
                   }
                   

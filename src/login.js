@@ -82,13 +82,13 @@ const Login=({loadAsync, login, } )=> {
                 <section className='register login bw animated'>
                     <div className='halfsect'>
 
-                        <h1 className='h1'> Welcome to</h1>
-                        <h1 className='spry_h1'>SPRY</h1>
+                        <h1 className='h1'> Welcome to <span className='spry_h1'>SPRY</span></h1>
+                        {/* <h1 className='spry_h1'></h1> */}
 
                         <h3 className='h3r'>let's see what people think of you</h3>
                         <div className='smallTxt'>
                             <div className='regTxt'>
-                            <p>login to <span style={{color:'rgb(73 175 84)',fontSize:'1.3rem',fontWeight:'800',textTransform:'uppercase'}}>spry</span> and see what your friends have been saying about you, You'll never know who comments but you'll see their comments</p>
+                            <p>login to <span style={{color:'#1f7c49',fontSize:'1.3rem',fontWeight:'800',textTransform:'uppercase'}}>spry</span> and see what your friends have been saying about you, You'll never know who comments but you'll see their comments</p>
                             </div>
                         </div>
                         <div className='btn-box'>
@@ -119,7 +119,7 @@ const Login=({loadAsync, login, } )=> {
                                 <label className='inputLabel'>Email Address</label>
                             </div>
                             <div className='inputContainer'>
-                                <input className={'input ' + (validPassword ? 'valid-input': 'invalid-input')} type='password'  id='password' onInput={validator} placeholder='Password' minLength={8} maxLength={12} />
+                                <input className={'input ' + (validPassword ? 'valid-input': 'invalid-input')} type='password'  id='password' onInput={validator} placeholder='Password' minLength={1} maxLength={12} />
                                 <label className='inputLabel'>Password</label>
                             </div>
                             <div className='btn-box'>

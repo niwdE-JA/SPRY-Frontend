@@ -59,11 +59,27 @@ function upSlide (){
     }
 }
 
+// STICKY NAVBAR
+
+function stickNavbar () {
+    let navbar = document.getElementsByClassName('navbar')[0]
+    let bound = window.pageYOffset
+
+    if ( bound > 21 ){
+        navbar.style.position = 'fixed'
+    }
+    else{
+        navbar.style.position = 'initial'
+    }
+}
+
 function animationTrigger () {
     rightSlide()
     leftSlide()
     upSlide()
     fadeIn()
+
+    stickNavbar()
 }
 
 

@@ -15,6 +15,15 @@ body {
     white,
     #d8d8d83d
     );
+  user-select:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -ms-tap-highlight-color: transparent;
+
 }
 body::-webkit-scrollbar{
   width: 8px;
@@ -22,7 +31,7 @@ body::-webkit-scrollbar{
   background: #d5d5d5;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #49af54;
+  background-color: #1f7c49;
   border-radius: 100px;
   padding-inline-start: 5px;
   padding-inline-end: 5px;
@@ -34,7 +43,7 @@ code {
 }
 :root{
   --prmryClr: #1f7c49;
-  --prmryColor-sub:#49af54;
+  --prmryColor-sub:#1f7c49;
   --prmryTxtClrL:#5a5a5a;
   --prmryTxtClrD:white;
   --anim-objects:3.5px;

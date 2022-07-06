@@ -7,7 +7,7 @@ const Dialog = ({ unprompter, message, description }) => {
     <>
         <div className = {'dialog' } >
             <h3 className = 'cancel' onClick = { () => { unprompter() } }>+</h3>
-            <h3 className = 'h3r'>
+            <h3 className = 'h3r-alt'>
                 { message }
             </h3>
             <div className = 'regTxt' style = {{ paddingBottom: '1.5rem'}}>

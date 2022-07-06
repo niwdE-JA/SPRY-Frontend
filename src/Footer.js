@@ -22,8 +22,10 @@ const Footer=({route, loggedin, prompter})=> {
                         <ul className ='tl'>
                             <li><a href='https://wa.me/+2348105966585'>Facebook</a></li>
                             <li><a href='https://wa.me/+2348105966585'>Instagram</a></li>
+                            <li><a href='https://wa.me/+2348105966585'>Twitter</a></li>                            
                             <li><a href='https://wa.me/+2348105966585'>Github</a></li>
                             <li><a href='https://wa.me/+2348105966585'>LinkedIn</a></li>
+
                         </ul>
                         <ul className ='tl'>
                             <img className='nxt' src ={logo}/>

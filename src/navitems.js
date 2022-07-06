@@ -2,7 +2,7 @@ import './App.css';
 import Ionicons from './Ionicons'
 
 
-const Navitems=({route, loggedin, toggled})=> {
+const Navitems=({route, loggedin, toggled, toggle})=> {
   let icon=['IoHome','IoLogIn','IoPeople',]//'information-circle', 'swap-horizontal', 'paper-plane', 'logo-facebook', 'logo-instagram', 'logo-whatsapp','send']
   // 
   
@@ -26,7 +26,7 @@ const Navitems=({route, loggedin, toggled})=> {
           let goto_route = (nav_list[i] ===  'log out')? 'login' : nav_list[i] ;
           let style = (goto_route === route) ? 'black' : '';
           return(
-              <li key={i} className={style +' '+ toggled} onClick={()=>{ window.location.href = '#' + goto_route }}>
+              <li key={i} className={style +' '+ toggled} onClick={()=>{ window.location.href = '#' + goto_route; toggle() }}>
                     
                   <Ionicons className={style + 'y' +' '+ toggled} name={icon[i]} />
                         
@@ -42,5 +42,3 @@ const Navitems=({route, loggedin, toggled})=> {
 }
 
 export default Navitems;
-
-// className={style + 'y' +' '+ toggled}

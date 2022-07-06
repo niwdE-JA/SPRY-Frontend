@@ -44,7 +44,7 @@
     color: white;
     text-decoration: none
 }
-.mid a:hover{
+.mid a:hover, .mid a:active{
     cursor: pointer;
     color:rgba(255, 255, 255, 0.849);
 }
@@ -80,7 +80,7 @@
     font-size: 1rem;
     transition: all .3s;
 }
-.ok:hover{
+.ok:hover, .ok:active{
     background-color: rgba(255, 255, 255, 0.9);
     border-color: rgba(255, 255, 255, 0.979);
 }
@@ -108,7 +108,7 @@
     color: white;
     transition: all .3s;
 }
-.no-list a:hover{
+.no-list a:hover, .no-list a:active{
     color: rgba(255, 255, 255, 0.583);
 }
 .nxt{
