@@ -17,7 +17,7 @@ const Main = ({dialog_display})=> {
                   <div class="block four"></div>
                   <div class="block five"></div>
               </div>
-              <h3 className = 'h3r tc'>
+              <h3 className = 'h3r-alt tc'>
                   loading...
               </h3>
               <div className = 'regTxt' style = {{ paddingBottom: '1.5rem'}}>

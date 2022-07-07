@@ -54,9 +54,6 @@
         box-shadow: 0px 0px 0px !important;
         border-left: 2px solid #1f7c49 !important;
     }
-    .form:hover, .form:active{
-        box-shadow: -0.1px 0.1px 0.3rem rgb(0 0 0) !important;
-    }
     .cnt {
         width: 95% !important;
     }
@@ -83,7 +80,12 @@
 
 }
 @media (max-width:580px) {
-.load {width: 70% !important;}
+    .auto-bottom{
+        width: 16rem !important;
+        margin: 1rem !important;
+        height: 20rem !important;
+    }
+    .load {width: 70% !important;}
     .focker_1, .focker_2 {width: 100% !important;}
     .listHolder {min-width: 65% !important;}
     .bod {width: 90% !important; min-height: fit-content !important; display: inherit !important;}

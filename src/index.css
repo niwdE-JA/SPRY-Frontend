@@ -6,8 +6,13 @@
   margin: 0px;
   padding: 0px;
 }
+
+/* font-family: 'Comfortaa', cursive;
+font-family: 'Lexend Deca', sans-serif;
+font-family: 'PT Mono', monospace; */
+
 body {
-    font-family:   system-ui, -apple-system, BlinkMacSystemFont, 'lato', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(

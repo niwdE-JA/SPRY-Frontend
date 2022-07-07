@@ -320,7 +320,9 @@ padding-inline-end: 5px;
 }
 .auto-bottom{
     margin-bottom: auto;
-    margin-top: 8%;
+    margin-top: 5%;
+    width: 30rem;
+    height: 40rem;
 }
 
 .slide-left{transition: all .5s; opacity: 0;}

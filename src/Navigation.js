@@ -50,7 +50,7 @@ class Navigation extends React.Component {
                                 {
                                 (this.props.route === 'home'  )?
                                 <div >
-                                    <input className='search-alt' placeholder='Search comments...' maxLength='15' onChange={this.props.searChange} />
+                                    <input className='search-alt' placeholder='Search Comments...' maxLength='15' onChange={this.props.searChange} />
                                     <button className='click-alt' onClick={()=>{console.log("Fire, baby.")}}><Ionicons className='small_medium-icon center-icon' name='IoSearch' /></button>
                                 </div>
                                 :<></>
@@ -75,12 +75,13 @@ class Navigation extends React.Component {
                             <Navitems 
                                 route = {this.props.route}
                                 loggedin = {this.props.loggedin}
+                                toggle = { () => {console.log('')}}
                                 toggled = ''
                             />
                             {
                             (this.props.route === 'home'  )?
                             <li >
-                                <input className='search' placeholder='Search comments...' maxLength='15' onChange={this.props.searChange} />
+                                <input className='search' placeholder='Search Comments...' maxLength='15' onChange={this.props.searChange} />
                                 <button className='click' onClick={()=>{console.log("Fire, baby.")}}><Ionicons className='small_medium-icon center-icon' name='IoSearch' /></button>
                             </li>
                             :<></>

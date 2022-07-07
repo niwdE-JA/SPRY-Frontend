@@ -399,7 +399,7 @@ class App extends React.Component {
               loggedin= {this.state.loggedin}
             />
             {
-            (this.state.dialog)?
+            (this.state.dialog_display)?
             <Dialog
               unprompter = {this.prompt_down}
               message = {this.state.message}

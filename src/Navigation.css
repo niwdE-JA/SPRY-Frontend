@@ -81,7 +81,7 @@
     min-width: max-content;
     padding: 1rem;
     border-radius: 1rem;
-    top: 3rem;
+    top: 140%;
     right: 5%;
     text-transform: capitalize;
     box-shadow: -0.2px 0.2px 5px #201e1e;
@@ -178,7 +178,12 @@
 .search::placeholder{
     color: #1f7c49;
     font-size: .8rem;
-    font-weight: 600;
+    font-weight: 100;
+}
+.search-alt::placeholder{
+    color: #1f7c49;
+    font-size: .8rem;
+    font-weight: 100;
 }
 .invisible{
     display: none !important;

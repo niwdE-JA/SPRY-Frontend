@@ -12,7 +12,7 @@ const Home = ({ server, getdata, inputField, user, fullname, setFullname, routeC
     return comment.alias.toLowerCase().includes(inputField.toLowerCase()) || comment.message.toLowerCase().includes(inputField.toLowerCase())
   })
 
-  function copyText(text){
+  async function copyText(text){
     var text_area = document.createElement("textarea");
     text_area.value = text;
 
@@ -146,7 +146,7 @@ const Home = ({ server, getdata, inputField, user, fullname, setFullname, routeC
     
       <section className='mainSect-alt bw'>
         <div className = 'row'>
-          <img src='homer.png' className='about_img auto-bottom'/>
+          <img src='homer.png' className='auto-bottom'/>
           <div className='mainPart'>
             <div className='conten'>
               <h3 className='spry_h1'>Check out your Comments</h3>
@@ -162,13 +162,28 @@ const Home = ({ server, getdata, inputField, user, fullname, setFullname, routeC
                   </div>
                   <h3>What do you think of me? <br/> Say something about me</h3>
                   <div className='shrbx'>
-                    <button className='btn' onClick = {()=>{
-                      // generate link with username as query params
-                      let share_link = window.location.origin + '?user=' + user + '#post' ;
-                      //call share link intent or use copy-to-clipboard to store string
-                      copyText(share_link);
-                      setDialog('Copied to clipboard','You can now share your link with your friends!');
-                    }} >Share link <FaShare className='small-icon center-icon'/></button>
+                    <button className='btn' onClick = {
+                      async ()=>{
+                        // generate link with username as query params
+                        let share_link = window.location.origin + '?user=' + user + '#post' ;
+                        //call share link intent or use copy-to-clipboard to store string
+                        let shareData = {
+                          title: 'SPRY',
+                          text: 'See what people think of you!',
+                          url: share_link,
+                        };
+
+                        try{
+                          await navigator.share( shareData );
+                          setTimeout( ()=>{
+                            setDialog('Link shared successfully!','You should see their comments ASAP.');
+                          }, 1000);
+                        }catch(err){
+                          await copyText(share_link);
+                          setDialog('Copied to clipboard','You can now share your link with your friends!');
+                        }
+                      }
+                    } >Share link <FaShare className='small-icon center-icon'/></button>
                     <button className = 'btn'
                       onClick={()=>{
                         loadAsync(
