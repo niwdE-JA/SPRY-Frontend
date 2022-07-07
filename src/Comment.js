@@ -11,7 +11,7 @@ const Comment = ({content, value})=>{
         <div className='content rplCont'>
             <div className='rplbx'>
               <div className='imgRpl'>
-                  <img src = {`${ alias }.jpg`} style = {{ height: '3rem', width: '3rem' }}/>
+                  <img src = {`${ alias.split(' ')[0].toLowerCase() }.jpg`} style = {{ height: '3rem', width: '3rem' }}/>
               </div> 
               <div className='rpl'>
                 <h2><Highlight message={alias} value={value}/></h2>
